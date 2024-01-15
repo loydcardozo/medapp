@@ -16,26 +16,26 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     listContentConfig.add(
       const ContentConfig(
+        pathImage: "assets/images/clipboard.png",
         title: "ERASER",
         description:
             "Allow miles wound place the leave had. To sitting subject no improve studied limited",
-        pathImage: "assets/images/clipboard.png",
       ),
     );
     listContentConfig.add(
       const ContentConfig(
+        pathImage: "assets/images/sick.png",
         title: "PENCIL",
         description:
             "Ye indulgence unreserved connection alteration appearance",
-        pathImage: "assets/images/sick.png",
       ),
     );
     listContentConfig.add(
       const ContentConfig(
+        pathImage: "assets/images/telemedicine.png",
         title: "RULER",
         description:
             "Much evil soon high in hope do view. Out may few northward believing attempted. Yet timed being songs marry one defer men our. Although finished blessing do of",
-        pathImage: "assets/images/telemedicine.png",
       ),
     );
   }
