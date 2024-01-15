@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:medapp/pages/homepage.dart';
+// import 'package:medapp/pages/homepage.dart';
+import 'package:medapp/pages/onboarding_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,7 +13,7 @@ const MyApp({Key? key}) : super(key: key);
 Widget build(BuildContext context) {
   return MaterialApp(
      debugShowCheckedModeBanner: false,
-    home: const HomePage(),
+    home:  OnboardingScreen(),
       theme: ThemeData(brightness: Brightness.dark),
   );
 }
