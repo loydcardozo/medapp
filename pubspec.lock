@@ -139,6 +139,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "4.1.4"
+  intro_slider:
+    dependency: "direct dev"
+    description:
+      name: intro_slider
+      sha256: eb43fefa27b0655edebc3e7fe7ff320cb5996a4e64649d79969c7099105fe52f
+      url: "https://pub.dev"
+    source: hosted
+    version: "4.2.1"
   js:
     dependency: transitive
     description:
@@ -306,3 +314,4 @@ packages:
     version: "3.1.2"
 sdks:
   dart: ">=3.2.4 <4.0.0"
+  flutter: ">=1.12.0"
