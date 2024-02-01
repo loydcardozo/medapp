@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class HomePage extends StatelessWidget{
 const HomePage({Key? key}) : super(key: key);
 
@@ -67,13 +68,20 @@ Widget build(BuildContext context) {
 
               ),
               
-              Row(
-                children: [
-                  Card(
+              // Row(
+              //   children: [
+              //     Card(
+              //       child: GridView.count(
+              //         // gridDelegate= SliverGridDelegateWithFixedCrossAxisCount,
+              //         crossAxisCount: 3,
+              //         children: [
+
+              //         ],
                     
-                  ),
-                ],
-                ),
+              //     ),
+              //   ),
+              //   ],
+              //   ),
                 Align(
                   alignment: Alignment.centerLeft,
             child: Padding(
