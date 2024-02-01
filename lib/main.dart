@@ -16,7 +16,7 @@ const MyApp({Key? key}) : super(key: key);
 Widget build(BuildContext context) {
   return MaterialApp(
      debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.dark),
+      theme: ThemeData(brightness: Brightness.light),
     home:  FutureBuilder<bool>(
      future: shouldShowOnboarding(getInstallationId),
      builder: (context, snapshot) {
@@ -36,7 +36,7 @@ Widget build(BuildContext context) {
 Future<bool> shouldShowOnboarding(Function getInstallationId) async {
   SharedPreferences prefs = await SharedPreferences.getInstance();
   String storedInstallationId = prefs.getString('installationId') ?? '';
-  String currentInstallationId = await getInstallationId();
+  String currentInstallationId = await getInstallationId(); 
 
   if (storedInstallationId.isEmpty || storedInstallationId != currentInstallationId) {
    
