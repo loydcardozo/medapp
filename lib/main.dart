@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+// import 'package:medapp/sidebar.dart';
 // import 'package:medapp/pages/homepage.dart';
 import 'package:medapp/pages/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -15,6 +16,8 @@ const MyApp({Key? key}) : super(key: key);
 @override
 Widget build(BuildContext context) {
   return MaterialApp(
+    // child: Scaffold(
+    // drawer: sidemenu(),
      debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
     home:  FutureBuilder<bool>(
@@ -29,6 +32,7 @@ Widget build(BuildContext context) {
       }
      }  
     )
+    // ),
   );
 }
 }
