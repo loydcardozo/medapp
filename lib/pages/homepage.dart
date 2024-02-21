@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-
+import 'package:medapp/pages/chats.dart';
+import 'package:medapp/pages/profilepage.dart';
 
 class HomePage extends StatelessWidget{
 const HomePage({Key? key}) : super(key: key);
@@ -13,19 +14,31 @@ Widget build(BuildContext context) {
             size: 30.0,
           ),
           actions: [
+            Padding(padding: EdgeInsets.all(5.0)),
+            IconButton(
+              icon: Icon(Icons.chat,
+              size: 30.0,
+              ),
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsPage()));
+              },
+            ),
             Padding(
               padding: EdgeInsets.only(right: 5.0),
               child: IconButton(
               icon: Icon(Icons.person,
               size: 30.0,
               ),
-              onPressed: () {},
+              onPressed: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+              },
             ),
             ),
           ],
           title: Text('Home'),
         ),
-        body: Center(
+        body: SingleChildScrollView(
+        child :Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: <Widget>[
@@ -68,20 +81,32 @@ Widget build(BuildContext context) {
 
               ),
               
-              // Row(
-              //   children: [
-              //     Card(
-              //       child: GridView.count(
-              //         // gridDelegate= SliverGridDelegateWithFixedCrossAxisCount,
-              //         crossAxisCount: 3,
-              //         children: [
+              // GridView.count(
+                // crossAxisCount: 2,
+    //             mainAxisSpacing: 10,
+    //             crossAxisSpacing: 10,
+                // children: List.generate(100, (index)) {
+                  // child: Text(
+                // 'Item $index',
+                // style: Theme.of(context).textTheme.headlineSmall,)
+                  // Expanded(
+                  //   children:[
+    //                   Container(
+    //                       padding: const EdgeInsets.all(8),
+    //                       color: Colors.teal[100],
+    //   child: const Text("He'd have you all unravel at the"),
+    // ),
+    // Container(
+    //   padding: const EdgeInsets.all(8),
+    //   color: Colors.teal[200],
+    //   child: const Text('Heed not the rabble'),
+    // ),
+                    // ]
+                    // )
+    //             ]
+                // }
+                  // ),
 
-              //         ],
-                    
-              //     ),
-              //   ),
-              //   ],
-              //   ),
                 Align(
                   alignment: Alignment.centerLeft,
             child: Padding(
@@ -98,6 +123,7 @@ Widget build(BuildContext context) {
             ],
         ),
             ),
+        )
   );
 }
 }

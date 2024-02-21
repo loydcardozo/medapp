@@ -13,7 +13,8 @@ class _LoginPageState extends State<LoginPage> {
         appBar: AppBar(
         title: Text("Login"),
         ),
-        body: Padding(
+        body: SingleChildScrollView(
+        child: Padding(
           padding:EdgeInsets.all(20),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -42,6 +43,7 @@ class _LoginPageState extends State<LoginPage> {
               )
             ]
             )
+      ),
       )
     );
   } 
