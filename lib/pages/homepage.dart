@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:medapp/pages/chats.dart';
+import 'package:medapp/pages/conversation_list.dart';
 import 'package:medapp/pages/profilepage.dart';
 
 class HomePage extends StatelessWidget{
@@ -20,7 +20,7 @@ Widget build(BuildContext context) {
               size: 30.0,
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsPage()));
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ConvoPage()));
               },
             ),
             Padding(
@@ -28,7 +28,7 @@ Widget build(BuildContext context) {
               child: IconButton(
               icon: Icon(Icons.person,
               size: 30.0,
-              ),
+              ),    
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
               },
@@ -56,6 +56,9 @@ Widget build(BuildContext context) {
                 child: TextField(
                 decoration: InputDecoration(
                   labelText: 'search',
+                  prefixIcon: Icon(
+                    Icons.search,
+                  ),
                   border: OutlineInputBorder(
                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
 

@@ -42,44 +42,100 @@ class EditProfilePage extends StatefulWidget{
         Container(
           child: Column(
             children: [
+            Padding(padding: EdgeInsets.all(10)),
             TextField(
             decoration: InputDecoration(
-              labelText: "First Name"
+              labelText: "First Name",
+              prefixIcon: Icon(
+                Icons.person,
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             decoration: InputDecoration(
-              labelText: "Last name"
+              labelText: "Last name",
+              prefixIcon: Icon(
+                Icons.person,
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
             )
           ),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             decoration: InputDecoration(
-              labelText: "email"
+              labelText: "email",
+              prefixIcon: Icon(
+                Icons.email
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             decoration: InputDecoration(
-              labelText: "password"
+              labelText: "password",
+              prefixIcon: Icon(
+                Icons.password
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             decoration: InputDecoration(
-              labelText: "date of birth"
+              labelText: "date of birth",
+              prefixIcon: Icon(
+                Icons.cake
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             decoration: InputDecoration(
-              labelText:"address"
+              labelText:"address",
+              prefixIcon: Icon(
+                Icons.location_on
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             decoration: InputDecoration(
-              labelText: "phone number"
-            )
+              labelText: "phone number",
+              prefixIcon: Icon(
+                Icons.phone
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
+              )
           ),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             decoration: InputDecoration(
-              labelText:"health information"
+              labelText:"health information",
+              prefixIcon: Icon(
+                Icons.health_and_safety
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              )
             )
           )
             ]

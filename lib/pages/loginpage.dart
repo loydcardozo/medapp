@@ -17,16 +17,33 @@ class _LoginPageState extends State<LoginPage> {
         child: Padding(
           padding:EdgeInsets.all(20),
           child: Column(
+            // AssetImage('assets/images/login.png'),
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              Padding(padding:EdgeInsets.all(10)),
+              Image.asset('assets/images/login.jpg'),
+              Padding(padding: EdgeInsets.all(20)),
               TextField(
                 decoration: InputDecoration(
+                  prefixIcon: Icon(
+                      Icons.email,
+                    ),
                   labelText: "Email",
+                  border: OutlineInputBorder(
+                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
                 ),
               ),
+              Padding(padding: EdgeInsets.all(10.0)),
               TextField(
                 decoration: InputDecoration(
                   labelText: "Password",
+                  prefixIcon: Icon(
+                    Icons.password,
+                  ),
+                  border: OutlineInputBorder(
+                     borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                  ),
                 ),
               ),
               ElevatedButton(
@@ -40,6 +57,15 @@ class _LoginPageState extends State<LoginPage> {
                 onPressed: (){
                   Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
                 }
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.blue,
+                ),
+                child: Text('Forgot Password'),
+                onPressed: () {
+
+                },
               )
             ]
             )

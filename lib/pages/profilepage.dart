@@ -38,68 +38,108 @@ class ProfilePage extends StatelessWidget{
         Container(
           child: Column(
             children: [
-            Padding(padding: EdgeInsets.all(20)),
+            Padding(padding: EdgeInsets.all(10)),
             TextField(
             readOnly: true,
             decoration: InputDecoration(
               labelText: "First Name",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.person
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
-          Padding(padding: EdgeInsets.all(20)),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             readOnly: true,
             decoration: InputDecoration(
               labelText: "Last name",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.person
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
-          Padding(padding: EdgeInsets.all(20)),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             readOnly: true,
             decoration: InputDecoration(
               labelText: "email",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.email
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0)),
+              ),
             )
           ),
-          Padding(padding: EdgeInsets.all(20)),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
               labelText: "password",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.password
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
             )
           ),
-          Padding(padding: EdgeInsets.all(20)),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
               labelText: "date of birth",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.cake
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
             )
           ),
-          Padding(padding: EdgeInsets.all(20)),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
               labelText:"address",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.location_on
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
             )
           ),
-          Padding(padding: EdgeInsets.all(20)),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             readOnly: true,
             decoration: InputDecoration(
               labelText: "phone number",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.phone
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
             )
           ),
-          Padding(padding: EdgeInsets.all(20)),
+          Padding(padding: EdgeInsets.all(10)),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
               labelText:"health information",
-              border: OutlineInputBorder(),
+              prefixIcon: Icon(
+                Icons.health_and_safety
+              ),
+              border: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(30.0))
+              ),
             )
           )
             ]

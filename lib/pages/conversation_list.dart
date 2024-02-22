@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medapp/pages/chats.dart';
 
 class ConvoPage extends StatelessWidget{
 const ConvoPage({Key? key}) : super(key: key);
@@ -10,9 +11,13 @@ const ConvoPage({Key? key}) : super(key: key);
         title: Text("chats"),
       ),
       body: SingleChildScrollView(
-        child: Column(
-          
-        ),
+        child: 
+          ElevatedButton(
+            child: Text('chat'),
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsPage()));
+            }
+          ),
       ),
     );
   }
