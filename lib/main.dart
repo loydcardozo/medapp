@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-// import 'package:medapp/sidebar.dart';
+import 'package:medapp/pages/StartingPage.dart';
+import 'package:medapp/sidebar.dart';
 // import 'package:medapp/pages/homepage.dart';
 import 'package:medapp/pages/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-import 'package:medapp/pages/loginpage.dart';
+// import 'package:medapp/pages/loginpage.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget{
@@ -16,11 +17,11 @@ const MyApp({Key? key}) : super(key: key);
 @override
 Widget build(BuildContext context) {
   return MaterialApp(
-    // child: Scaffold(
-    // drawer: sidemenu(),
      debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-    home:  FutureBuilder<bool>(
+    home: Scaffold(
+      drawer: Sidemenu(),
+    body: FutureBuilder<bool>(
      future: shouldShowOnboarding(getInstallationId),
      builder: (context, snapshot) {
       if (snapshot.connectionState == ConnectionState.waiting) {
@@ -28,11 +29,11 @@ Widget build(BuildContext context) {
       } else if (snapshot.data == true) {
         return OnboardingScreen();
       } else {
-        return LoginPage();
-      }
+        return StartPage();
+      } 
      }  
     )
-    // ),
+    ),
   );
 }
 }

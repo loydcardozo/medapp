@@ -84,32 +84,7 @@ Widget build(BuildContext context) {
 
               ),
               
-              // GridView.count(
-                // crossAxisCount: 2,
-    //             mainAxisSpacing: 10,
-    //             crossAxisSpacing: 10,
-                // children: List.generate(100, (index)) {
-                  // child: Text(
-                // 'Item $index',
-                // style: Theme.of(context).textTheme.headlineSmall,)
-                  // Expanded(
-                  //   children:[
-    //                   Container(
-    //                       padding: const EdgeInsets.all(8),
-    //                       color: Colors.teal[100],
-    //   child: const Text("He'd have you all unravel at the"),
-    // ),
-    // Container(
-    //   padding: const EdgeInsets.all(8),
-    //   color: Colors.teal[200],
-    //   child: const Text('Heed not the rabble'),
-    // ),
-                    // ]
-                    // )
-    //             ]
-                // }
-                  // ),
-
+              
                 Align(
                   alignment: Alignment.centerLeft,
             child: Padding(

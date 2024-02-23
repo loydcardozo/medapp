@@ -11,8 +11,7 @@ const ConvoPage({Key? key}) : super(key: key);
         title: Text("chats"),
       ),
       body: SingleChildScrollView(
-        child: 
-          ElevatedButton(
+        child: ElevatedButton(
             child: Text('chat'),
             onPressed: () {
               Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsPage()));

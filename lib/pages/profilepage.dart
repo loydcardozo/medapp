@@ -38,11 +38,15 @@ class ProfilePage extends StatelessWidget{
         Container(
           child: Column(
             children: [
-            Padding(padding: EdgeInsets.all(10)),
+            Align(alignment: Alignment.centerLeft,
+              child: Padding(padding: EdgeInsets.all(10),
+              child: Text('First Name'),
+              ),
+            ),
             TextField(
             readOnly: true,
             decoration: InputDecoration(
-              labelText: "First Name",
+              // labelText: "First Name",
               prefixIcon: Icon(
                 Icons.person
               ),
@@ -51,11 +55,15 @@ class ProfilePage extends StatelessWidget{
               ),
             )
           ),
-          Padding(padding: EdgeInsets.all(10)),
+          Align(alignment: Alignment.centerLeft,
+            child: Padding(padding: EdgeInsets.all(10),
+              child: Text('Last Name'),
+            ),
+          ),
           TextField(
             readOnly: true,
             decoration: InputDecoration(
-              labelText: "Last name",
+              // labelText: "Last name",
               prefixIcon: Icon(
                 Icons.person
               ),
@@ -64,11 +72,15 @@ class ProfilePage extends StatelessWidget{
               ),
             )
           ),
-          Padding(padding: EdgeInsets.all(10)),
+          Align(alignment: Alignment.centerLeft,
+            child: Padding(padding: EdgeInsets.all(10),
+              child: Text('Email'),
+            ),
+          ),
           TextField(
             readOnly: true,
             decoration: InputDecoration(
-              labelText: "email",
+              // labelText: "email",
               prefixIcon: Icon(
                 Icons.email
               ),
@@ -77,11 +89,15 @@ class ProfilePage extends StatelessWidget{
               ),
             )
           ),
-          Padding(padding: EdgeInsets.all(10)),
+          Align(alignment: Alignment.centerLeft,
+            child: Padding(padding: EdgeInsets.all(10),
+              child: Text('Password'),
+            ),
+          ),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
-              labelText: "password",
+              // labelText: "password",
               prefixIcon: Icon(
                 Icons.password
               ),
@@ -90,11 +106,15 @@ class ProfilePage extends StatelessWidget{
               ),
             )
           ),
-          Padding(padding: EdgeInsets.all(10)),
+          Align(alignment: Alignment.centerLeft,
+            child: Padding(padding: EdgeInsets.all(10),
+              child: Text('Date Of Birth'),
+            ), 
+          ),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
-              labelText: "date of birth",
+              // labelText: "date of birth",
               prefixIcon: Icon(
                 Icons.cake
               ),
@@ -103,11 +123,15 @@ class ProfilePage extends StatelessWidget{
               ),
             )
           ),
-          Padding(padding: EdgeInsets.all(10)),
+          Align(alignment: Alignment.centerLeft,
+          child: Padding(padding: EdgeInsets.all(10),
+            child: Text('Address'),
+          ),
+          ),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
-              labelText:"address",
+              // labelText:"address",
               prefixIcon: Icon(
                 Icons.location_on
               ),
@@ -116,11 +140,16 @@ class ProfilePage extends StatelessWidget{
               ),
             )
           ),
-          Padding(padding: EdgeInsets.all(10)),
+          Align(
+            alignment: Alignment.centerLeft,
+            child: Padding(padding: EdgeInsets.all(10),
+              child: Text('Phone Number')
+            ),
+          ),
           TextField(
             readOnly: true,
             decoration: InputDecoration(
-              labelText: "phone number",
+              // labelText: "phone number",
               prefixIcon: Icon(
                 Icons.phone
               ),
@@ -129,11 +158,15 @@ class ProfilePage extends StatelessWidget{
               ),
             )
           ),
-          Padding(padding: EdgeInsets.all(10)),
+          Align(alignment: Alignment.centerLeft,
+            child: Padding(padding: EdgeInsets.all(10),
+              child: Text('Health Information')
+            ),
+          ),
           TextField(
             readOnly:true,
             decoration: InputDecoration(
-              labelText:"health information",
+              // labelText:"health information",
               prefixIcon: Icon(
                 Icons.health_and_safety
               ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/pages/homepage.dart';
+import 'package:medapp/pages/loginpage.dart';
 
 class RegisterPage extends StatefulWidget{
   @override
@@ -122,7 +123,20 @@ class _RegisterPageState extends State<RegisterPage>{
               ElevatedButton(
                 onPressed: (){
                 Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-              }, child: Text('Register'))
+              }, child: Text('Register')),
+              Row(
+                children:[
+                  Padding(padding: EdgeInsets.only(right:50)),
+                  Text('Already have an account'),
+                  TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
+                    child: Text('Login'),
+                  )
+                ]
+              )
+              
             ]
         )
       )

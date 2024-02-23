@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medapp/pages/forgot_password1.dart';
 import 'package:medapp/pages/homepage.dart';
 import 'package:medapp/pages/registrationpage.dart';
 
@@ -17,7 +18,6 @@ class _LoginPageState extends State<LoginPage> {
         child: Padding(
           padding:EdgeInsets.all(20),
           child: Column(
-            // AssetImage('assets/images/login.png'),
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(padding:EdgeInsets.all(10)),
@@ -64,7 +64,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 child: Text('Forgot Password'),
                 onPressed: () {
-
+                  Navigator.push(context,MaterialPageRoute(builder: (context) => ForgotPassPage()));
                 },
               )
             ]
