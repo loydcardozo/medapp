@@ -16,6 +16,8 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+
+  // bool _isEmailValid = true;
   
   void login(String email , password) async {
     
@@ -55,6 +57,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 Padding(padding: EdgeInsets.all(20)),
                 TextFormField(
                   controller: emailController,
+                  // keyboardType: TextInputType.emailAddress,
                   validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
@@ -66,6 +69,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                         Icons.email,
                       ),
                     labelText: "Email",
+                    // errorText: _isEmailValid ? null : 'Please enter a valid email',
                     border: OutlineInputBorder(
                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
@@ -74,6 +78,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 Padding(padding: EdgeInsets.all(10.0)),
                 TextFormField(
                   controller: passwordController,
+                  // obscureText: true,
                   validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
@@ -82,8 +87,9 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
             },
                   decoration: InputDecoration(
                     labelText: "Password",
+                    // errorText: _isEmailValid ? null : 'Please enter a valid email',
                     prefixIcon: Icon(
-                      Icons.password,
+                      Icons.lock,
                     ),
                     border: OutlineInputBorder(
                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -95,13 +101,19 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                   onTap: (){
                   login(emailController.text.toString(), passwordController.text.toString());
                   if (_formKey.currentState!.validate()) {
-                  // If the form is valid, display a snackbar. In the real world,
-                  // you'd often call a server or save the information in a database.
                   ScaffoldMessenger.of(context).showSnackBar(
-                    const SnackBar(content: Text('Processing Data')),
+                    SnackBar(content: Text('Processing Data')),
                   );
+                //   if (_isEmailValid) {
+                //   String enteredPassword = passwordController.text;
+                //   print('Email: $enteredEmail, Password: $enteredPassword');
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                 }
+                // },
+                // String enteredEmail = emailController.text.trim();
+                // bool isValidEmail = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(enteredEmail);
+                // setState(() {
+                  // _isEmailValid = isValidEmail;
                 },
                 child: Container(
                   height: 50,
@@ -112,6 +124,9 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                   child: Center(child: Text('Login'),),
                 ),
                 ),
+            // )
+            // )
+                // ),
                 TextButton(
                   style: TextButton.styleFrom(
                     foregroundColor: Colors.blue,
