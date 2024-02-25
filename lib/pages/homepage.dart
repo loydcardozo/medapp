@@ -9,10 +9,6 @@ const HomePage({Key? key}) : super(key: key);
 Widget build(BuildContext context) {
   return Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            Icons.menu,
-            size: 30.0,
-          ),
           actions: [
             Padding(padding: EdgeInsets.all(5.0)),
             IconButton(
@@ -37,11 +33,70 @@ Widget build(BuildContext context) {
           ],
           title: Text('Home'),
         ),
+        drawer: Drawer(
+          child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+              DrawerHeader(
+                decoration: BoxDecoration(
+                  color: Colors.blue,
+                  // image: DecorationImage(image: AssetImage('assets/icon/medical-team.png'),)
+                ),
+                child: Text('Appointment'),
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.book
+                ),
+                title: Text('appointments'),
+                onTap: () {
+
+                },
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.chat
+                ),
+                title: Text('chats'),
+                onTap: () {
+
+                }
+              ),
+              ListTile(
+                leading: Icon(
+                  Icons.settings
+                ),
+                title: Text('settings'),
+                onTap: () {
+
+                }
+              ),
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.history
+              //   ),
+              //   title: Text('history'),
+              //   onTap: () {
+
+              //   }
+              // ),
+              ListTile(
+                leading: Icon(
+                  Icons.payment
+                ),
+                title: Text('Payment History'),
+                onTap: () {
+
+                }
+              ),
+            ],
+          )
+        ),
         body: SingleChildScrollView(
         child :Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
-            children: <Widget>[
+            children: [
               Padding(padding: EdgeInsets.only(left: 10.0),
                 child: Text(
                 'Book Your Appointment',
@@ -84,8 +139,25 @@ Widget build(BuildContext context) {
 
               ),
               
-              
-                Align(
+            // GridView.count(
+            //   crossAxisCount: 2,
+            //   crossAxisSpacing: 4,
+            //   mainAxisSpacing: 4,
+            //   children: List.generate(1, (index) {
+            //     return Padding(
+            //       padding: EdgeInsets.all(10.0),
+            //       child: Container(
+            //         decoration: BoxDecoration(
+            //            image: DecorationImage(
+            //             image: AssetImage('assets/images/logo.jpg')
+            //             )
+            //         ),
+            //       ),
+            //       );
+            //   }),
+            // ),
+
+            Align(
                   alignment: Alignment.centerLeft,
             child: Padding(
               padding: EdgeInsets.only(top: 10, left: 10),

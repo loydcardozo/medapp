@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/pages/StartingPage.dart';
-import 'package:medapp/sidebar.dart';
 // import 'package:medapp/pages/homepage.dart';
 import 'package:medapp/pages/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -19,9 +18,8 @@ Widget build(BuildContext context) {
   return MaterialApp(
      debugShowCheckedModeBanner: false,
       theme: ThemeData(brightness: Brightness.light),
-    home: Scaffold(
-      drawer: Sidemenu(),
-    body: FutureBuilder<bool>(
+      // theme: ThemeData(brightness: Brightness.dark),
+    home: FutureBuilder<bool>(
      future: shouldShowOnboarding(getInstallationId),
      builder: (context, snapshot) {
       if (snapshot.connectionState == ConnectionState.waiting) {
@@ -33,7 +31,6 @@ Widget build(BuildContext context) {
       } 
      }  
     )
-    ),
   );
 }
 }
