@@ -54,25 +54,25 @@ class _RegisterPageState extends State<RegisterPage>{
                     ),
                   )
                 ),
-                Padding(padding: EdgeInsets.all(10)),
-                TextFormField(
-                  controller: lastNameController,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    labelText: 'Last name',
-                    prefixIcon: Icon(
-                      Icons.person,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                  )
-                ),
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     TextFormField(
+            //       controller: lastNameController,
+            //       validator: (value) {
+            //   if (value == null || value.isEmpty) {
+            //     return 'Please enter some text';
+            //   }
+            //   return null;
+            // },
+            //       decoration: InputDecoration(
+            //         labelText: 'Last name',
+            //         prefixIcon: Icon(
+            //           Icons.person,
+            //         ),
+            //         border: OutlineInputBorder(
+            //           borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            //         ),
+            //       )
+            //     ),
                 Padding(padding: EdgeInsets.all(10),),
                 TextFormField(
                   controller: emailController,
@@ -113,83 +113,83 @@ class _RegisterPageState extends State<RegisterPage>{
                     ),
                   ),
                 ),
-                Padding(padding: EdgeInsets.all(10)),
-                TextFormField(
-                  controller: dateOfBirthController,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    labelText: 'date of birth',
-                    prefixIcon: Icon(
-                      Icons.cake
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.all(10)),
-                TextFormField(
-                  controller: addressController,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    labelText: 'address',
-                    prefixIcon: Icon(
-                      Icons.location_on,
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.all(10)),
-                TextFormField(
-                  controller: phoneNumberController,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    labelText: 'phone number',
-                    prefixIcon: Icon(
-                      Icons.phone
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                  ),
-                ),
-                Padding(padding: EdgeInsets.all(10)),
-                TextFormField(
-                  controller: HealthInfoController,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    labelText: 'health information',
-                    prefixIcon: Icon(
-                      Icons.health_and_safety
-                    ),
-                    border: OutlineInputBorder(
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     TextFormField(
+            //       controller: dateOfBirthController,
+            //       validator: (value) {
+            //   if (value == null || value.isEmpty) {
+            //     return 'Please enter some text';
+            //   }
+            //   return null;
+            // },
+            //       decoration: InputDecoration(
+            //         labelText: 'date of birth',
+            //         prefixIcon: Icon(
+            //           Icons.cake
+            //         ),
+            //         border: OutlineInputBorder(
+            //           borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            //         ),
+            //       ),
+            //     ),
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     TextFormField(
+            //       controller: addressController,
+            //       validator: (value) {
+            //   if (value == null || value.isEmpty) {
+            //     return 'Please enter some text';
+            //   }
+            //   return null;
+            // },
+            //       decoration: InputDecoration(
+            //         labelText: 'address',
+            //         prefixIcon: Icon(
+            //           Icons.location_on,
+            //         ),
+            //         border: OutlineInputBorder(
+            //           borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            //         ),
+            //       ),
+            //     ),
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     TextFormField(
+            //       controller: phoneNumberController,
+            //       validator: (value) {
+            //   if (value == null || value.isEmpty) {
+            //     return 'Please enter some text';
+            //   }
+            //   return null;
+            // },
+            //       decoration: InputDecoration(
+            //         labelText: 'phone number',
+            //         prefixIcon: Icon(
+            //           Icons.phone
+            //         ),
+            //         border: OutlineInputBorder(
+            //           borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            //         ),
+            //       ),
+            //     ),
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     TextFormField(
+            //       controller: HealthInfoController,
+            //       validator: (value) {
+            //   if (value == null || value.isEmpty) {
+            //     return 'Please enter some text';
+            //   }
+            //   return null;
+            // },
+            //       decoration: InputDecoration(
+            //         labelText: 'health information',
+            //         prefixIcon: Icon(
+            //           Icons.health_and_safety
+            //         ),
+            //         border: OutlineInputBorder(
                       
-                      borderRadius: BorderRadius.all(Radius.circular(30.0))
-                    ),
-                  ),
-                ),
+            //           borderRadius: BorderRadius.all(Radius.circular(30.0))
+            //         ),
+            //       ),
+                // ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 GestureDetector(
                   onTap: (){
