@@ -10,14 +10,14 @@ class RegisterPage extends StatefulWidget{
 
 class _RegisterPageState extends State<RegisterPage>{
   final _formKey = GlobalKey<FormState>();
-  TextEditingController firstNameController = TextEditingController();
-  TextEditingController lastNameController = TextEditingController();
+  // TextEditingController firstNameController = TextEditingController();
+  // TextEditingController lastNameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  TextEditingController dateOfBirthController = TextEditingController();
-  TextEditingController addressController = TextEditingController();
-  TextEditingController phoneNumberController = TextEditingController();
-  TextEditingController HealthInfoController = TextEditingController();
+  // TextEditingController dateOfBirthController = TextEditingController();
+  // TextEditingController addressController = TextEditingController();
+  // TextEditingController phoneNumberController = TextEditingController();
+  // TextEditingController HealthInfoController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -35,25 +35,25 @@ class _RegisterPageState extends State<RegisterPage>{
               children:[
                 Padding(padding: EdgeInsets.all(20)),
                 Image.asset('assets/images/login.png'),
-                Padding(padding: EdgeInsets.all(10)),
-                TextFormField(
-                  controller: firstNameController,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    labelText:'First name',
-                    prefixIcon: Icon(
-                      Icons.person
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                  )
-                ),
+            //     Padding(padding: EdgeInsets.all(10)),
+            //     TextFormField(
+            //       controller: firstNameController,
+            //       validator: (value) {
+            //   if (value == null || value.isEmpty) {
+            //     return 'Please enter some text';
+            //   }
+            //   return null;
+            // },
+            //       decoration: InputDecoration(
+            //         labelText:'First name',
+            //         prefixIcon: Icon(
+            //           Icons.person
+            //         ),
+            //         border: OutlineInputBorder(
+            //           borderRadius: BorderRadius.all(Radius.circular(30.0)),
+            //         ),
+            //       )
+            //     ),
             //     Padding(padding: EdgeInsets.all(10)),
             //     TextFormField(
             //       controller: lastNameController,

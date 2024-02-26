@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/pages/editprofilepage.dart';
 
-class ProfilePage extends StatelessWidget{
+class ProfilePage extends StatefulWidget{
+  @override
+  _ProfilePageState createState() => _ProfilePageState();
+}
+
+class _ProfilePageState extends State<ProfilePage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
