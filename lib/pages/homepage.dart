@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:medapp/pages/conversation_list.dart';
 import 'package:medapp/pages/profilepage.dart';
 import 'package:medapp/pages/setting.dart';
+import 'package:medapp/pages/appointment_list.dart';
+// import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomePage extends StatelessWidget{
 const HomePage({Key? key}) : super(key: key);
@@ -50,7 +52,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('appointments'),
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => AppointmentListPage()));
                 },
               ),
               ListTile(
@@ -126,6 +128,121 @@ Widget build(BuildContext context) {
               // ),
               // Column(
               //   children: [
+                Padding(
+                  padding:EdgeInsets.only(top: 10, left: 10),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('todays reminder',
+                      style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                    ),
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {
+
+                  },
+                  child: Container(
+                    margin: EdgeInsets.only(left: 10, right: 10),
+                    height: 150,
+                    child: Card(
+                      color: Colors.blue[200],
+                      shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: Column(
+                      children: [
+                        Row(
+                          children: [
+                            Padding(padding: EdgeInsets.only(left:20 , top: 20),
+                              child: Align(alignment: Alignment.centerLeft,
+                              child: CircleAvatar(
+                                // backgroundColor: Colors.green[500],
+                                radius: 20,
+                                child: const CircleAvatar(
+                                  backgroundImage: AssetImage(
+                                      'assets/images/empty_profile.jpg'),
+                                  radius: 20,
+                                ), 
+                              ),
+                                                    ),
+                            ),
+                            Column(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left:10, top: 20),
+                              child: Text('Dr Loyd Cardozo',
+                                style: TextStyle(
+                                  color: Colors.white
+                                )
+                              )),
+                            Text('specialist',
+                              style: TextStyle(
+                                color: Colors.white
+                              )
+                            ),
+                          ]
+                        ),
+                           
+                            ]
+                        ),
+                    Padding(
+                      padding: EdgeInsets.only(top: 10, right:5, left:5),
+                      child: Container(
+                        height: 50,
+                        child: Card(
+                                color: Colors.blue[100],
+                          shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Row(
+                              children: [
+                                Padding(
+                                  padding: EdgeInsets.only(left: 20),
+                                  child: Icon(
+                                    Icons.calendar_month_rounded,
+                                    color: Colors.white,
+                                    ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 5),
+                                  child: Text('mon, july 21',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    )
+                                  ),
+                                ),
+                        
+                                Padding(
+                                  padding: EdgeInsets.only(left:20),
+                                  child: Icon(
+                                    Icons.access_time_outlined,
+                                    color: Colors.white
+                                    ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsets.only(left: 5),
+                                  child: Text('11:00 - 12:00',
+                                    style: TextStyle(
+                                      color: Colors.white
+                                    ),
+                                  ))
+                              ]
+                            )
+                               ),
+                      ),
+                    ),
+                        
+                      ]
+                    ),
+                    ),
+                  ),
+                ),
+                  
+                
+                 
                 Align(alignment: Alignment.centerLeft,
                 child: Padding(
                   padding:EdgeInsets.only(top: 10, left: 10),
@@ -222,64 +339,99 @@ Widget build(BuildContext context) {
 
               ),
 
-              GridView.count(
-              crossAxisCount: 2,
-              // crossAxisSpacing: 4,
-              // mainAxisSpacing: 4,
-              children: [
-                  Container(
-                    color: Colors.teal[200],
-                    height: 20,
-                    width: 20,
-                    // decoration: BoxDecoration(
-                    //    image: DecorationImage(
-                    //     image: AssetImage('assets/images/logo.jpg')
-                    //     )
-                    // ),
-                  ),
-                  Container(
-                    color: Colors.teal[200],
-                    height: 20,
-                    width: 20,
-                    // decoration: BoxDecoration(
-                    //    image: DecorationImage(
-                    //     image: AssetImage('assets/images/logo.jpg')
-                    //     )
-                    // ),
-                  ),
-                  Container(
-                    color: Colors.teal[200],
-                    height: 20,
-                    width: 20,
-                    // decoration: BoxDecoration(
-                    //    image: DecorationImage(
-                    //     image: AssetImage('assets/images/logo.jpg')
-                    //     )
-                    // ),
-                  ),
-                  Container(
-                    color: Colors.teal[200],
-                    height: 20,
-                    width: 20,
-                    // decoration: BoxDecoration(
-                    //    image: DecorationImage(
-                    //     image: AssetImage('assets/images/logo.jpg')
-                    //     )
-                    // ),
-                  ),
-                  Container(
-                    color: Colors.teal[200],
-                    height: 20,
-                    width: 20,
-                    // decoration: BoxDecoration(
-                    //    image: DecorationImage(
-                    //     image: AssetImage('assets/images/logo.jpg')
-                    //     )
-                    // ),
-                  ),
-              ]
+              Container(
+                margin: EdgeInsets.only(left:10, right:10),
+                child: GridView.count(
+                crossAxisCount: 2,
+                crossAxisSpacing: 10,
+                mainAxisSpacing: 10,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: [
+                    GestureDetector(
+                      onTap: () {
+
+                      },
+                      child: Container(
+                      height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+
+                    GestureDetector(
+                      onTap: () {
+                        
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+
+                    GestureDetector(
+                      onTap:() {
+
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap:() {
+                        
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap:() {
+                        
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                ]
+                ),
               ),
-            // ),
+          
 
               Align(
                   alignment: Alignment.centerLeft,
@@ -294,10 +446,105 @@ Widget build(BuildContext context) {
               ),
             ),
                 ),
+
+                Container(
+                  margin: EdgeInsets.only(left:10, right:10),
+                  child: GridView.count(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10,
+                    mainAxisSpacing: 10,
+                    shrinkWrap: true,
+                    physics: NeverScrollableScrollPhysics(),
+                    children: [
+                    GestureDetector(
+                      onTap: () {
+
+                      },
+                      child: Container(
+                      height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+
+                    GestureDetector(
+                      onTap: () {
+                        
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+
+                    GestureDetector(
+                      onTap:() {
+
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap:() {
+                        
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap:() {
+                        
+                      },
+                      child: Container(
+                        height: 20,
+                      width: 20,
+                      decoration: BoxDecoration(
+                          color: Colors.teal[200],
+                          borderRadius: BorderRadius.circular(10)
+                        ),
+                      ),
+                    ),
+                    ]
+                    ),
+                ),
             ],
         ),
+      // ]
         ),
         )
+  // ),
   );
 }
 }
