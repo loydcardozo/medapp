@@ -104,7 +104,7 @@ class _ProfilePageState extends State<ProfilePage>{
             decoration: InputDecoration(
               // labelText: "password",
               prefixIcon: Icon(
-                Icons.password
+                Icons.lock
               ),
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.all(Radius.circular(30.0))

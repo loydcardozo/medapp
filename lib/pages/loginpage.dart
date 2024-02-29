@@ -121,7 +121,8 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                     color: Colors.green,
                     borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(child: Text('Login'),),
+                  child: Center(child: Text('Login'),
+                  ),
                 ),
                 ),
             // )
@@ -136,12 +137,12 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                     Navigator.push(context,MaterialPageRoute(builder: (context) => ForgotPassPage()));
                   },
                 ),
-                ElevatedButton(
-                  child: Text("Login"),
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                  },
-                ),
+                // ElevatedButton(
+                //   child: Text("Login"),
+                //   onPressed: (){
+                //     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                //   },
+                // ),
                 Row(
                   children: [
                     Padding(padding: EdgeInsets.only(left: 50)),

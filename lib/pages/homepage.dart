@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/pages/conversation_list.dart';
 import 'package:medapp/pages/profilepage.dart';
+import 'package:medapp/pages/setting.dart';
 
 class HomePage extends StatelessWidget{
 const HomePage({Key? key}) : super(key: key);
@@ -40,8 +41,7 @@ Widget build(BuildContext context) {
               DrawerHeader(
                 decoration: BoxDecoration(
                   color: Colors.blue,
-                  // image: DecorationImage(image: AssetImage('assets/icon/medical-team.png'),)
-                ),
+                    ),
                 child: Text('Appointment'),
               ),
               ListTile(
@@ -59,14 +59,14 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('chats'),
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ConvoPage()));
                 }
               ),
               ListTile(
                 leading: Icon(
                   Icons.settings
                 ),
-                title: Text('settings'),
+                title: Text('Payment History'),
                 onTap: () {
 
                 }
@@ -84,13 +84,14 @@ Widget build(BuildContext context) {
                 leading: Icon(
                   Icons.payment
                 ),
-                title: Text('Payment History'),
+                title: Text('Settings'),
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SettingPage()));
                 }
               ),
+              
             ],
-          )
+          ),
         ),
         body: SingleChildScrollView(
         child :Center(
@@ -123,12 +124,94 @@ Widget build(BuildContext context) {
               ),
               // Image(image: AssetImage('assets/images/banner.png'),
               // ),
+              // Column(
+              //   children: [
+                Align(alignment: Alignment.centerLeft,
+                child: Padding(
+                  padding:EdgeInsets.only(top: 10, left: 10),
+                  child: Text('symptoms',
+                    style: TextStyle(
+                    fontSize: 30,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),                
+                ),
+                ),
+              //   ]
+              // ),
+              Container(
+          margin: const EdgeInsets.symmetric(vertical: 20),
+          height: 120,
+          child: ListView(
+            scrollDirection: Axis.horizontal,
+            children: [
+              GestureDetector(
+                onTap:() {
+
+                },
+                child: Container(
+                  width: 120,
+                  height: 120,                  // color: Colors.red,
+                  // decoration: BoxDecoration(
+                    child: Column(
+                      children: [
+                      Image(
+                        height:120,
+                        width: 120,
+                        image: AssetImage('assets/images/cough.jpg'),
+                         ),
+                        //  Text('cough')
+                      ]
+                    ),
+                  // )
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+
+                },
+                child: Container(
+                  width: 160,
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      Image(
+                        height: 120,
+                        width: 120,
+                        image: AssetImage('assets/images/cough.jpg')
+                      ),
+                      // Text('cough')
+                    ]
+                  ),
+                ),
+              ),
+              GestureDetector(
+                onTap: () {
+
+                },
+                child: Container(
+                  width: 160,
+                  color: Colors.white,
+                  child: Column(
+                    children: [
+                      Image(
+                        height: 120,
+                        width: 120,
+                        image: AssetImage('assets/images/cough.jpg')
+                      )
+                    ]
+                  )
+                ),
+              ),
+            ],
+        ),
+            ),
               Align(
               alignment: Alignment.centerLeft, 
               child: Padding(
                 padding:EdgeInsets.only(top: 10, left: 10),
                   child: Text('Categories',
-                  // textAlign: TextAlign.start,
+                  // textAlign: TextAlign.start,chro
                   // overflow: TextOverflow.ellipsis,
                 style: TextStyle(
                   fontSize: 30,
@@ -138,26 +221,67 @@ Widget build(BuildContext context) {
                 ),
 
               ),
-              
-            // GridView.count(
-            //   crossAxisCount: 2,
-            //   crossAxisSpacing: 4,
-            //   mainAxisSpacing: 4,
-            //   children: List.generate(1, (index) {
-            //     return Padding(
-            //       padding: EdgeInsets.all(10.0),
-            //       child: Container(
-            //         decoration: BoxDecoration(
-            //            image: DecorationImage(
-            //             image: AssetImage('assets/images/logo.jpg')
-            //             )
-            //         ),
-            //       ),
-            //       );
-            //   }),
+
+              GridView.count(
+              crossAxisCount: 2,
+              // crossAxisSpacing: 4,
+              // mainAxisSpacing: 4,
+              children: [
+                  Container(
+                    color: Colors.teal[200],
+                    height: 20,
+                    width: 20,
+                    // decoration: BoxDecoration(
+                    //    image: DecorationImage(
+                    //     image: AssetImage('assets/images/logo.jpg')
+                    //     )
+                    // ),
+                  ),
+                  Container(
+                    color: Colors.teal[200],
+                    height: 20,
+                    width: 20,
+                    // decoration: BoxDecoration(
+                    //    image: DecorationImage(
+                    //     image: AssetImage('assets/images/logo.jpg')
+                    //     )
+                    // ),
+                  ),
+                  Container(
+                    color: Colors.teal[200],
+                    height: 20,
+                    width: 20,
+                    // decoration: BoxDecoration(
+                    //    image: DecorationImage(
+                    //     image: AssetImage('assets/images/logo.jpg')
+                    //     )
+                    // ),
+                  ),
+                  Container(
+                    color: Colors.teal[200],
+                    height: 20,
+                    width: 20,
+                    // decoration: BoxDecoration(
+                    //    image: DecorationImage(
+                    //     image: AssetImage('assets/images/logo.jpg')
+                    //     )
+                    // ),
+                  ),
+                  Container(
+                    color: Colors.teal[200],
+                    height: 20,
+                    width: 20,
+                    // decoration: BoxDecoration(
+                    //    image: DecorationImage(
+                    //     image: AssetImage('assets/images/logo.jpg')
+                    //     )
+                    // ),
+                  ),
+              ]
+              ),
             // ),
 
-            Align(
+              Align(
                   alignment: Alignment.centerLeft,
             child: Padding(
               padding: EdgeInsets.only(top: 10, left: 10),
@@ -172,7 +296,7 @@ Widget build(BuildContext context) {
                 ),
             ],
         ),
-            ),
+        ),
         )
   );
 }

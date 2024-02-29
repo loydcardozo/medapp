@@ -10,7 +10,11 @@ class _ChatsPageState extends State<ChatsPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Chat'),
+        // title: Image.asset('assets/images/empty-profile.jpg'),
+        leading: Icon(
+          Icons.person
+        ),
+        title: Text('loyd cardozo'),
       ),
 
     body: SafeArea(

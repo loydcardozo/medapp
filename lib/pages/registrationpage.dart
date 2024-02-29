@@ -207,7 +207,11 @@ class _RegisterPageState extends State<RegisterPage>{
                     color: Colors.green,
                     borderRadius: BorderRadius.circular(10)
                   ),
-                  child: Center(child: Text('Login'),),
+                  child: Center(child: Text('Register',
+                    style: TextStyle(
+                      color: Colors.white
+                    ),
+                  ),),
                 ),
                 ),
                 Row(
