@@ -12,16 +12,27 @@ class _AppointmentListPageState extends State<AppointmentListPage>{
       appBar: AppBar(
         title: Text('Appointments')
       ),
-      body: SingleChildScrollView(
-        
-        child: Card(
+      body: SingleChildScrollView(     
+        child: Column(
+          children: [
+            Row(
+             children:[ 
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text('upcoming')),
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text('past'))  
+             ]
+            ),
+             Card(
           child: GestureDetector(
                   onTap: () {
 
                   },
                   child: Container(
                     margin: EdgeInsets.only(left: 10, right: 10),
-                    height: 150,
+                    height: 180,
                     child: Card(
                       color: Colors.blue[200],
                       shape: RoundedRectangleBorder(
@@ -105,17 +116,38 @@ class _AppointmentListPageState extends State<AppointmentListPage>{
                                     ),
                                   ))
                               ]
-                            )
+                            ),
+                            
                                ),
                       ),
                     ),
                         
+                        Row(
+                          children: [
+                            Padding(
+                              padding: EdgeInsets.only(left: 20),
+                              child: Container(
+                                height: 40,
+                                color: Colors.white,
+                              child: Align(
+                                alignment: Alignment.center,
+                                child: Text('cancel'))
+                              ),
+                            ),
+                            Container(
+                              child: Text('reschedule')
+                              )
+                          ]
+                        ),
                       ]
                     ),
                     ),
                   ),
                 ),
         )
+          ]
+        ),  
+        
       ),
     );
   }

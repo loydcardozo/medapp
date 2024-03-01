@@ -3,6 +3,7 @@ import 'package:medapp/pages/conversation_list.dart';
 import 'package:medapp/pages/profilepage.dart';
 import 'package:medapp/pages/setting.dart';
 import 'package:medapp/pages/appointment_list.dart';
+import 'package:medapp/pages/doctors_list.dart';
 // import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomePage extends StatelessWidget{
@@ -66,6 +67,15 @@ Widget build(BuildContext context) {
               ),
               ListTile(
                 leading: Icon(
+                  Icons.payment
+                ),
+                title: Text('Doctors List'),
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=> DocListPage()));
+                }
+              ),
+              ListTile(
+                leading: Icon(
                   Icons.settings
                 ),
                 title: Text('Payment History'),
@@ -73,15 +83,15 @@ Widget build(BuildContext context) {
 
                 }
               ),
-              // ListTile(
-              //   leading: Icon(
-              //     Icons.history
-              //   ),
-              //   title: Text('history'),
-              //   onTap: () {
+              ListTile(
+                leading: Icon(
+                  Icons.history
+                ),
+                title: Text('Notification'),
+                onTap: () {
 
-              //   }
-              // ),
+                }
+              ),
               ListTile(
                 leading: Icon(
                   Icons.payment
@@ -158,15 +168,15 @@ Widget build(BuildContext context) {
                           children: [
                             Padding(padding: EdgeInsets.only(left:20 , top: 20),
                               child: Align(alignment: Alignment.centerLeft,
-                              child: CircleAvatar(
-                                // backgroundColor: Colors.green[500],
-                                radius: 20,
-                                child: const CircleAvatar(
+                              // child: CircleAvatar(
+                              //   backgroundColor: Colors.green[500],
+                              //   radius: 20,
+                                child: CircleAvatar(
                                   backgroundImage: AssetImage(
                                       'assets/images/empty_profile.jpg'),
                                   radius: 20,
                                 ), 
-                              ),
+                              // ),
                                                     ),
                             ),
                             Column(
