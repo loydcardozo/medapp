@@ -18,6 +18,7 @@ Widget build(BuildContext context) {
             IconButton(
               icon: Icon(Icons.chat,
               size: 30.0,
+              color: Colors.black,
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ConvoPage()));
@@ -28,6 +29,7 @@ Widget build(BuildContext context) {
               child: IconButton(
               icon: Icon(Icons.person,
               size: 30.0,
+              color: Colors.black
               ),    
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
@@ -35,7 +37,11 @@ Widget build(BuildContext context) {
             ),
             ),
           ],
-          title: Text('Home'),
+          title: Text('Home',
+            style: TextStyle(
+              color: Colors.black,
+            )
+          ),
         ),
         drawer: Drawer(
           child: ListView(
@@ -43,9 +49,14 @@ Widget build(BuildContext context) {
             children: [
               DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue,
+                  color: Colors.red[700]
                     ),
-                child: Text('Appointment'),
+                child: Text('Appointment',
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold
+                  )
+                ),
               ),
               ListTile(
                 leading: Icon(
@@ -102,6 +113,31 @@ Widget build(BuildContext context) {
                 }
               ),
               
+                   GestureDetector(
+            onTap: () {
+              
+            },
+            child: Padding(
+              padding: EdgeInsets.only(top: 20),
+              child: Container(
+                margin: EdgeInsets.only(left: 20, right:20),
+                height:50,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(10),
+                  color: Colors.red[700]
+                ),
+                child: Center(
+                  child: Text('Log out',
+                    style: TextStyle(
+                      color: Colors.white
+                    )
+                  ),
+                
+              ),
+                        ),
+            )
+                ),
+              
             ],
           ),
         ),
@@ -110,7 +146,7 @@ Widget build(BuildContext context) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.only(left: 10.0),
+              Padding(padding: EdgeInsets.only(left: 10.0, top: 10),
                 child: Text(
                 'Book Your Appointment',
                   style: TextStyle(
@@ -138,17 +174,36 @@ Widget build(BuildContext context) {
               // ),
               // Column(
               //   children: [
-                Padding(
-                  padding:EdgeInsets.only(top: 10, left: 10),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('todays reminder',
-                      style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.bold,
-                    ),
+                Row(
+                  children: [
+                  Padding(
+                    padding:EdgeInsets.only(top: 10, left: 10),
+                    child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Todays Reminder',
+                        style: TextStyle(
+                        fontSize: 30,
+                        fontWeight: FontWeight.bold,
+                      ),
+                      ),
                     ),
                   ),
+
+                  Padding(
+                    padding: EdgeInsets.only(left: 20, top: 10),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=> AppointmentListPage()));
+                      },
+                      child: Text('See More',
+                        style: TextStyle(
+                          color: Colors.blue,
+                          fontSize: 15
+                        )
+                      )
+                    ),
+                  )
+                  ]
                 ),
                 GestureDetector(
                   onTap: () {
@@ -158,7 +213,9 @@ Widget build(BuildContext context) {
                     margin: EdgeInsets.only(left: 10, right: 10),
                     height: 150,
                     child: Card(
-                      color: Colors.blue[200],
+                      // color: Colors.blue[200],
+                      // color: Colors.white60,
+                      color: Colors.grey,
                       shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -185,12 +242,12 @@ Widget build(BuildContext context) {
                               padding: EdgeInsets.only(left:10, top: 20),
                               child: Text('Dr Loyd Cardozo',
                                 style: TextStyle(
-                                  color: Colors.white
+                                  color: Colors.black
                                 )
                               )),
                             Text('specialist',
                               style: TextStyle(
-                                color: Colors.white
+                                color: Colors.black
                               )
                             ),
                           ]
@@ -203,7 +260,8 @@ Widget build(BuildContext context) {
                       child: Container(
                         height: 50,
                         child: Card(
-                                color: Colors.blue[100],
+                                // color: Colors.blue[100],
+                                color: Colors.red[700],
                           shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -256,7 +314,7 @@ Widget build(BuildContext context) {
                 Align(alignment: Alignment.centerLeft,
                 child: Padding(
                   padding:EdgeInsets.only(top: 10, left: 10),
-                  child: Text('symptoms',
+                  child: Text('Symptoms',
                     style: TextStyle(
                     fontSize: 30,
                     fontWeight: FontWeight.bold,

@@ -17,7 +17,12 @@ const MyApp({Key? key}) : super(key: key);
 Widget build(BuildContext context) {
   return MaterialApp(
      debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.light),
+      theme: ThemeData(
+          brightness: Brightness.light,
+          appBarTheme: AppBarTheme(
+            color: Colors.red[700],
+          ),
+        ),
       // theme: ThemeData(brightness: Brightness.dark),
     home: FutureBuilder<bool>(
      future: shouldShowOnboarding(getInstallationId),

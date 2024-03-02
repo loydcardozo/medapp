@@ -9,21 +9,39 @@ class StartPage extends StatelessWidget{
   @override
   Widget build(BuildContext context){
     return Scaffold(
-      appBar: AppBar(
-        title: Text('welcome'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('welcome'),
+      // ),
       body: SingleChildScrollView(
         child: Column(
           children: [
+
+            Align(
+              alignment: Alignment.centerLeft,
+              child: Padding(
+                  padding: EdgeInsets.only(top: 70, left: 10, bottom: 10),
+                child: Text('Welcome',
+                  style: TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 30
+                  ),
+                )),
+            ),
+
             Padding(padding: EdgeInsets.only(left:20.0, right:20.0),
               child: Image.asset('assets/images/starting.jpg'),
             ),
             Padding(padding: EdgeInsets.only(right: 20, left: 20),
               child: Align(alignment: Alignment.centerLeft,
               child: Text('Appointment system',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+
+              )
             )),
             ),
-            Padding(padding: EdgeInsets.only(left: 20,right:20, top: 20),
+            Padding(padding: EdgeInsets.only(left: 20,right:20, top: 10),
                 child: Text('A convinient way to book an appointment just by sitting at home',
               style: TextStyle(
                 fontSize: 20,
