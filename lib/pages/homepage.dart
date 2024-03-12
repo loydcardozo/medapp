@@ -18,7 +18,7 @@ Widget build(BuildContext context) {
             IconButton(
               icon: Icon(Icons.chat,
               size: 30.0,
-              color: Colors.black,
+              color: Colors.white,
               ),
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ConvoPage()));
@@ -29,7 +29,7 @@ Widget build(BuildContext context) {
               child: IconButton(
               icon: Icon(Icons.person,
               size: 30.0,
-              color: Colors.black
+              color: Colors.white
               ),    
               onPressed: () {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
@@ -49,7 +49,7 @@ Widget build(BuildContext context) {
             children: [
               DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.red[700]
+                  color: Colors.blue[700]
                     ),
                 child: Text('Appointment',
                   style: TextStyle(
@@ -180,9 +180,9 @@ Widget build(BuildContext context) {
                     padding:EdgeInsets.only(top: 10, left: 10),
                     child: Align(
                       alignment: Alignment.centerLeft,
-                      child: Text('Todays Reminder',
+                      child: Text('Upcoming Reminder',
                         style: TextStyle(
-                        fontSize: 30,
+                        fontSize: 25,
                         fontWeight: FontWeight.bold,
                       ),
                       ),
@@ -242,13 +242,17 @@ Widget build(BuildContext context) {
                               padding: EdgeInsets.only(left:10, top: 20),
                               child: Text('Dr Loyd Cardozo',
                                 style: TextStyle(
-                                  color: Colors.black
+                                  color: Colors.white60,
+                                  fontWeight: FontWeight.bold,
                                 )
                               )),
-                            Text('specialist',
-                              style: TextStyle(
-                                color: Colors.black
-                              )
+                            Padding(
+                              padding: EdgeInsets.only(right: 30),
+                              child: Text('specialist',
+                                style: TextStyle(
+                                  color: Colors.black54
+                                )
+                              ),
                             ),
                           ]
                         ),

@@ -18,9 +18,14 @@ Widget build(BuildContext context) {
   return MaterialApp(
      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        // textTheme: TextTheme(
+        //   displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+        //   bodyLarge: TextStyle(fontSize: 18, color: Colors.white),
+        // ),
+        // iconTheme: IconThemeData(color: Colors.white),
           brightness: Brightness.light,
           appBarTheme: AppBarTheme(
-            color: Colors.red[700],
+            color: Colors.blue[700],
           ),
         ),
       // theme: ThemeData(brightness: Brightness.dark),

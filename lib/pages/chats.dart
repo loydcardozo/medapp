@@ -12,9 +12,38 @@ class _ChatsPageState extends State<ChatsPage>{
       appBar: AppBar(
         // title: Image.asset('assets/images/empty-profile.jpg'),
         leading: Icon(
-          Icons.person
+          Icons.person,
+          color: Colors.white
         ),
-        title: Text('loyd cardozo'),
+        actions: [
+            Padding(padding: EdgeInsets.all(5.0)),
+            IconButton(
+              icon: Icon(Icons.phone,
+              size: 30.0,
+              color: Colors.white,
+              ),
+              onPressed: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+              },
+            ),
+            Padding(
+              padding: EdgeInsets.only(right: 5.0),
+              child: IconButton(
+              icon: Icon(Icons.videocam,
+              size: 30.0,
+              color: Colors.white
+              ),    
+              onPressed: () {
+                // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+              },
+            ),
+            ),
+          ],
+        title: Text('loyd cardozo',
+          style: TextStyle(
+            color: Colors.white
+          )
+        ),
       ),
 
     body: SafeArea(

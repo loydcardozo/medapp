@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:medapp/pages/booking.dart';
 
 class DocDetailPage extends StatefulWidget{
   @override
@@ -141,19 +142,24 @@ class _DocDetailPageState extends State<DocDetailPage> {
                         child: Text('doctors Description')),
                     ),
                     
-                        Container(
-                          margin: EdgeInsets.only(left:20, right:20, top: 20),
-                          height: 50,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
-                            color: Colors.red,
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
+                          },
+                          child: Container(
+                            margin: EdgeInsets.only(left:20, right:20, top: 20),
+                            height: 50,
+                            decoration: BoxDecoration(
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                              color: Colors.red,
+                            ),
+                            child: Center(child: Text('Book Now',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontWeight: FontWeight.bold
+                              )
+                            )),
                           ),
-                          child: Center(child: Text('Book Now',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.bold
-                            )
-                          )),
                         ),
 
                       
