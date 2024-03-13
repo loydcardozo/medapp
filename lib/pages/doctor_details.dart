@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/pages/booking.dart';
+import 'package:medapp/pages/chats.dart';
 
 class DocDetailPage extends StatefulWidget{
   @override
@@ -139,7 +140,7 @@ class _DocDetailPageState extends State<DocDetailPage> {
                       padding: EdgeInsets.only(left: 20, top:20),
                       child: Align(
                         alignment: Alignment.centerLeft,
-                        child: Text('doctors Description')),
+                        child: Text('Doctors Description')),
                     ),
                     
                         GestureDetector(
@@ -151,7 +152,7 @@ class _DocDetailPageState extends State<DocDetailPage> {
                             height: 50,
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.all(Radius.circular(20)),
-                              color: Colors.red,
+                              color: Colors.blue[700],
                             ),
                             child: Center(child: Text('Book Now',
                               style: TextStyle(
@@ -163,20 +164,25 @@ class _DocDetailPageState extends State<DocDetailPage> {
                         ),
 
                       
-                        Container(
-                          height: 50,
-                          margin: EdgeInsets.only(left:20, right:20, top: 20),
-                          decoration: BoxDecoration(
-                            color: Colors.red,
-                            borderRadius: BorderRadius.all(Radius.circular(20)),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsPage()));
+                          },
+                          child: Container(
+                            height: 50,
+                            margin: EdgeInsets.only(left:20, right:20, top: 20),
+                            decoration: BoxDecoration(
+                              color: Colors.red,
+                              borderRadius: BorderRadius.all(Radius.circular(20)),
+                            ),
+                            child: Center(
+                              child: Text('Send Message',
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold
+                                )
+                              )),
                           ),
-                          child: Center(
-                            child: Text('Send Message',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontWeight: FontWeight.bold
-                              )
-                            )),
                         ),
                       
             ]

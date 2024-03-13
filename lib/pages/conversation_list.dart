@@ -9,7 +9,12 @@ const ConvoPage({Key? key}) : super(key: key);
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("chats"),
+        title: Text("Chats",
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          )
+        ),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -56,8 +61,8 @@ const ConvoPage({Key? key}) : super(key: key);
                                 padding: EdgeInsets.only(left: 10, top: 10),
                                 child: CircleAvatar(
                                   backgroundColor: Colors.white,
-                                  radius: 25,
-                                  child: const CircleAvatar(
+                                  radius: 22,
+                                  child: CircleAvatar(
                                     backgroundImage: AssetImage(
                                         'assets/images/empty_profile.jpg'),
                                     radius: 20,
@@ -67,35 +72,32 @@ const ConvoPage({Key? key}) : super(key: key);
                             ),
                               Column(
                                 children:[ 
-                                  Padding(padding: EdgeInsets.only(left:20)),
+                                  Padding(padding: EdgeInsets.only(left:40, top: 20)),
                                   Text('Loyd Cardozo',
                                     style: TextStyle(
                                     fontSize: 20,
                                 // color: Colors.green[900],
                                     fontWeight: FontWeight.w500,
                                                     ), 
-                                                  ),
-                                                  Row(
-                                                    children: [
-                                                      Align(alignment: Alignment.centerLeft,
-                                                                        child: Text(
-                                                                          'hi',
-                                                                          style: TextStyle(
-                                                                            fontSize: 15,
-                                                                            // color: Colors.green,
-                                                                          ),
-                                                                        ),
+                          ),
+                          Row(
+                          children: [
+                            Align(alignment: Alignment.centerLeft,
+                                 child: Text(
+                                        'hi',
+                                        style: TextStyle(
+                                        fontSize: 15,
+                                        // color: Colors.green,
+                                      ),
+                                    ),
                                                                         
-                                                                      ),
-                                                                      Align(
+                                ),
+                                 Align(
                             alignment: Alignment.centerRight,
                             child: Text('9:30 pm')
                           ),
-                                                                      ]
-                      
-                                                                    
-                                                  ),
-                          
+                    ]                                                
+                    ),
                                 ]
                               ), 
                             ]

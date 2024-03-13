@@ -10,31 +10,42 @@ class _AppointmentListPageState extends State<AppointmentListPage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Appointments')
+        title: Text('Appointments History',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          )
+        )
       ),
       body: SingleChildScrollView(     
         child: Column(
           children: [
             Row(
-             children:[ 
-              Align(
-                alignment: Alignment.centerLeft,
-                child: Text('upcoming')),
-              Align(
-                alignment: Alignment.centerRight,
-                child: Text('past'))  
-             ]
-            ),
-             Card(
-          child: GestureDetector(
-                  onTap: () {
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: Text('Upcoming')
+                  ),
 
+                Padding(
+                  padding: EdgeInsets.only(right: 10),
+                  child: Text('past')),
+
+                Text('cancel')
+                ]
+                ),
+
+            GestureDetector(
+                  onTap: () {
+                    
                   },
                   child: Container(
                     margin: EdgeInsets.only(left: 10, right: 10),
-                    height: 180,
+                    height: 200,
                     child: Card(
-                      color: Colors.blue[200],
+                      // color: Colors.blue[200],
+                      // color: Colors.white60,
+                      color: Colors.grey,
                       shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
@@ -44,15 +55,15 @@ class _AppointmentListPageState extends State<AppointmentListPage>{
                           children: [
                             Padding(padding: EdgeInsets.only(left:20 , top: 20),
                               child: Align(alignment: Alignment.centerLeft,
-                              child: CircleAvatar(
-                                // backgroundColor: Colors.green[500],
-                                radius: 20,
-                                child: const CircleAvatar(
+                              // child: CircleAvatar(
+                              //   backgroundColor: Colors.green[500],
+                              //   radius: 20,
+                                child: CircleAvatar(
                                   backgroundImage: AssetImage(
                                       'assets/images/empty_profile.jpg'),
                                   radius: 20,
                                 ), 
-                              ),
+                              // ),
                                                     ),
                             ),
                             Column(
@@ -61,13 +72,17 @@ class _AppointmentListPageState extends State<AppointmentListPage>{
                               padding: EdgeInsets.only(left:10, top: 20),
                               child: Text('Dr Loyd Cardozo',
                                 style: TextStyle(
-                                  color: Colors.white
+                                  color: Colors.white60,
+                                  fontWeight: FontWeight.bold,
                                 )
                               )),
-                            Text('specialist',
-                              style: TextStyle(
-                                color: Colors.white
-                              )
+                            Padding(
+                              padding: EdgeInsets.only(right: 30),
+                              child: Text('specialist',
+                                style: TextStyle(
+                                  color: Colors.black54
+                                )
+                              ),
                             ),
                           ]
                         ),
@@ -79,7 +94,8 @@ class _AppointmentListPageState extends State<AppointmentListPage>{
                       child: Container(
                         height: 50,
                         child: Card(
-                                color: Colors.blue[100],
+                                // color: Colors.blue[100],
+                                color: Colors.red[700],
                           shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         ),
@@ -116,35 +132,67 @@ class _AppointmentListPageState extends State<AppointmentListPage>{
                                     ),
                                   ))
                               ]
-                            ),
-                            
+                            )
                                ),
                       ),
                     ),
-                        
-                        Row(
-                          children: [
-                            Padding(
-                              padding: EdgeInsets.only(left: 20),
+                      Row(
+                        children: [
+                        Padding(
+                          padding: EdgeInsets.only(left:20, top: 10),
+                          child: Align(
+                            alignment: Alignment.centerLeft,
+                            child: GestureDetector(
+                              onTap:() {
+                                
+                              },
                               child: Container(
                                 height: 40,
-                                color: Colors.white,
-                              child: Align(
-                                alignment: Alignment.center,
-                                child: Text('cancel'))
+                                width: 130,
+                                decoration: BoxDecoration(
+                                  color: Colors.red[700],
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                                child: Center(
+                                  child: Text('cancel',
+                                    style: TextStyle(
+                                      color: Colors.white
+                                    )
+                                  ),
+                                )
                               ),
                             ),
-                            Container(
-                              child: Text('reschedule')
-                              )
-                          ]
+                          ),
                         ),
+
+                        Padding(
+                          padding: EdgeInsets.only(left: 20, top: 10),
+                          child: GestureDetector(
+                            onTap: () {},
+                            child: Container(
+                              height: 40,
+                              width: 150,
+                              decoration: BoxDecoration(
+                                color: Colors.red[700],
+                                borderRadius: BorderRadius.circular(20)
+                              ),
+                              child: Center(
+                                child: Text('reschedule',
+                                  style: TextStyle(
+                                    color: Colors.white
+                                  )
+                                ),
+                              )
+                            ),
+                          ),
+                        )
+                        ]
+                      )  
                       ]
                     ),
                     ),
                   ),
                 ),
-        )
           ]
         ),  
         

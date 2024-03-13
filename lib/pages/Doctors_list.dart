@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/pages/doctor_details.dart';
+import 'package:medapp/pages/booking.dart';
 
 class DocListPage extends StatefulWidget{
   @override
@@ -87,7 +88,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                              GestureDetector(
                               onTap: () {
-                    
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
@@ -162,7 +163,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                               GestureDetector(
                               onTap: () {
-                    
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
@@ -238,7 +239,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                               GestureDetector(
                               onTap: () {
-                    
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
@@ -314,7 +315,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                              GestureDetector(
                               onTap: () {
-                    
+                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),

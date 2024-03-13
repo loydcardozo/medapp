@@ -4,6 +4,8 @@ import 'package:medapp/pages/profilepage.dart';
 import 'package:medapp/pages/setting.dart';
 import 'package:medapp/pages/appointment_list.dart';
 import 'package:medapp/pages/doctors_list.dart';
+import 'package:medapp/pages/notification.dart';
+import 'package:medapp/pages/paymenthistory.dart';
 // import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 class HomePage extends StatelessWidget{
@@ -39,7 +41,7 @@ Widget build(BuildContext context) {
           ],
           title: Text('Home',
             style: TextStyle(
-              color: Colors.black,
+              color: Colors.white,
             )
           ),
         ),
@@ -91,7 +93,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('Payment History'),
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentHistoryPage()));
                 }
               ),
               ListTile(
@@ -100,7 +102,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('Notification'),
                 onTap: () {
-
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationPage()));
                 }
               ),
               ListTile(

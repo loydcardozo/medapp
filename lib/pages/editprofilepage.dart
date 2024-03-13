@@ -10,10 +10,6 @@ class EditProfilePage extends StatefulWidget{
     Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
-          leading: Icon(
-            Icons.menu,
-            size: 30,
-          ),
           actions: [
             IconButton(
                 icon: Icon(Icons.save,
