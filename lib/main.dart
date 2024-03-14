@@ -22,7 +22,7 @@ Widget build(BuildContext context) {
         //   displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
         //   bodyLarge: TextStyle(fontSize: 18, color: Colors.white),
         // ),
-        // iconTheme: IconThemeData(color: Colors.white),
+        iconTheme: IconThemeData(color: Colors.white),
           brightness: Brightness.light,
           appBarTheme: AppBarTheme(
             color: Colors.blue[700],

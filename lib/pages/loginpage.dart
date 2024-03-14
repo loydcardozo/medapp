@@ -42,7 +42,12 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
   Widget build(BuildContext context){
     return Scaffold(
         appBar: AppBar(
-        title: Text("Login"),
+        title: Text('Login',
+          style: TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          )
+        ),
         ),
         body: SingleChildScrollView(
         child: Form(
@@ -78,7 +83,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 Padding(padding: EdgeInsets.all(10.0)),
                 TextFormField(
                   controller: passwordController,
-                  // obscureText: true,
+                  obscureText: true,
                   validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
