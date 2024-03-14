@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:medapp/pages/confirmationPage.dart';
 
 class BookPage extends StatefulWidget {
   @override
@@ -21,8 +22,9 @@ class _BookPageState extends State<BookPage> {
         appBar:
             AppBar(title: Text('book', style: TextStyle(color: Colors.white))),
         body: SingleChildScrollView(
-            child: Column(children: [
-          TableCalendar(
+            child: Column(
+              children: [
+              TableCalendar(
             firstDay: DateTime.utc(2024, 2, 24),
             lastDay: DateTime.utc(2025, 2, 24),
             focusedDay: DateTime.now(),
@@ -47,27 +49,163 @@ class _BookPageState extends State<BookPage> {
           ),
           
           Padding(
-            padding: EdgeInsets.only(top: 20),
+            padding: EdgeInsets.only(top: 20, bottom: 20),
             child: Text('Select Consultancy Time',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
           ),
+          
+              GridView.count(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10,
+              crossAxisSpacing: 10,
+              shrinkWrap: true,
+              physics: NeverScrollableScrollPhysics(),
+              children: [
+                GestureDetector(
+                  onTap: () {
 
-          Container(
-            height: 50,
-            margin: EdgeInsets.only(left: 20, right:20),
-            decoration: BoxDecoration(
-              color: Colors.green,
-              borderRadius: BorderRadius.circular(10)
+                  },
+                    child: Container(
+                      height:100,
+                      decoration: BoxDecoration(
+                        color: Colors.grey[400],
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child : Center(
+                        child: Text('9:00 AM', 
+                          style: TextStyle(
+                            color: Colors.black
+                          )
+                        ),
+                      )
+                    ),
+                ),
+
+                GestureDetector(
+                  onTap: () {
+
+                  },
+                  child: Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey[400],
+                    ),
+                    child: Center(
+                      child: Text('10:00 AM'))
+                  ),
+                ),
+
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey[400],
+                    ),
+                    child: Center(child: Text('11:00 AM'))
+                  ),
+                ),
+                GestureDetector(
+                  onTap: () {},
+                  child: Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius : BorderRadius.circular(20),
+                      color: Colors.grey[400]
+                    ),
+                    child: Center(
+                      child: Text('12:00 AM')
+                      )
+                  ),
+                ),
+
+                Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey[400]
+                  ),
+                  child: Center(
+                    child: Text('1:00 AM'))
+                ),
+
+                Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey[400]
+                  ),
+                  child: Center(child: Text('2:00 AM'))
+                ),
+
+                Container(
+                  height: 100,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey[400]
+                  ),
+                  child: Center(child: Text('3:00 AM'))
+                ),
+
+                Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey[400]
+                    ),
+                    child: Center(child: Text('4:00 AM')),
+                  ),
+                  Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(20),
+                      color: Colors.grey[400]
+                    ),
+                    child: Center(child: Text('5:00 AM'))
+                  ),
+
+                  Container(
+                    height: 100,
+                    decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(20),
+                    color: Colors.grey[400]
+                  ),
+                  child: Center(
+                    child: Text('6:00 AM')
+                    )
+                )
+              ]
             ),
-            child: Center(
-              child: Text('Book',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold
+
+          Padding(
+            padding: EdgeInsets.only(top: 20, bottom: 20),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmBook()));
+              },
+              child: Container(
+                height: 50,
+                margin: EdgeInsets.only(left: 20, right:20),
+                decoration: BoxDecoration(
+                  color: Colors.green,
+                  borderRadius: BorderRadius.circular(10)
+                ),
+                child: Center(
+                  child: Text('Book',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold
+                    )
+                  ),
                 )
               ),
-            )
-          )
-        ])));
+            ),
+          ),
+        ]
+        )
+        )
+        );
   }
 }
