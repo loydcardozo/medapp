@@ -11,7 +11,12 @@ class _DocDetailPageState extends State<DocDetailPage> {
   Widget build(BuildContext context) {
       return Scaffold(
         appBar: AppBar(
-          title: Text('Doctors Details'),
+          title: Text('Doctors Details',
+            style: TextStyle(
+              color: Colors.white,
+              fontWeight: FontWeight.bold
+            )
+          ),
         ),
         body: SingleChildScrollView(
           child: Column(

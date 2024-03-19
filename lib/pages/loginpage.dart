@@ -6,6 +6,8 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 // import 'package:medapp/api/loginModel.dart';
+import 'package:medapp/providers/dio_provider.dart';
+import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -102,33 +104,52 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                   ),
                 ),
                 SizedBox(height: 40,),
-                GestureDetector(
-                  onTap: (){
-                  login(emailController.text.toString(), passwordController.text.toString());
-                  if (_formKey.currentState!.validate()) {
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(content: Text('Processing Data')),
-                  );
-                //   if (_isEmailValid) {
-                //   String enteredPassword = passwordController.text;
-                //   print('Email: $enteredEmail, Password: $enteredPassword');
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                }
-                // },
-                // String enteredEmail = emailController.text.trim();
-                // bool isValidEmail = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(enteredEmail);
-                // setState(() {
-                  // _isEmailValid = isValidEmail;
-                },
-                child: Container(
-                  height: 50,
-                  decoration: BoxDecoration(
-                    color: Colors.green,
-                    borderRadius: BorderRadius.circular(10)
-                  ),
-                  child: Center(child: Text('Login'),
-                  ),
-                ),
+                Consumer(
+                  builder: (context, auth, child) {
+                    return GestureDetector(
+                      onTap: () async {
+                        login(emailController.text.toString(), passwordController.text.toString());
+                        if (_formKey.currentState!.validate()) {
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(content: Text('Processing Data')),
+                          );
+                          //   if (_isEmailValid) {
+                          //   String enteredPassword = passwordController.text;
+                          //   print('Email: $enteredEmail, Password: $enteredPassword');
+                          final token = await DioProvider().getToken(emailController.text, passwordController.text);
+
+                          // if (token) {
+                          //   auth.loginSuccess();
+                          //   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                          // }
+
+                          if (token != null) {
+                            auth.loginSuccess();
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                          } else {
+                            print('Token is null. Please log in again.');
+                            Navigator.pushReplacementNamed(context, '/login');
+                          }
+
+                        }
+                        // },
+                        // String enteredEmail = emailController.text.trim();
+                        // bool isValidEmail = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(enteredEmail);
+                        // setState(() {
+                        // _isEmailValid = isValidEmail;
+                      },
+                      child: Container(
+                        height: 50,
+                        decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(10)
+                        ),
+                        child: Center(child: Text('Login'),
+                        ),
+                      ),
+                    );
+                  },
+
                 ),
             // )
             // )

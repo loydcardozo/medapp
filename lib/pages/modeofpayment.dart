@@ -10,7 +10,11 @@ class _ModeOfPaymentPageState extends State<ModeOfPaymentPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Mode Of Payment')
+        title: Text('Mode Of Payment',
+          style: TextStyle(
+           color:Colors.white,
+          )
+        )
       )
     );
   }

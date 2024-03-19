@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:medapp/pages/homepage.dart';
 import 'package:medapp/pages/loginpage.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+// import 'package:medapp/providers/dio_provider.dart';
 
 class RegisterPage extends StatefulWidget{
   @override
@@ -192,12 +193,13 @@ class _RegisterPageState extends State<RegisterPage>{
                 // ),
                 Padding(padding: EdgeInsets.only(top: 20)),
                 GestureDetector(
-                  onTap: (){
+                  onTap: () async {
                   (emailController.text.toString(), passwordController.text.toString());
                   if (_formKey.currentState!.validate()) {
                   ScaffoldMessenger.of(context).showSnackBar(
                     SnackBar(content: Text('Processing Data')),
                   );
+
                   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                 }
                 },
