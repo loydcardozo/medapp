@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/model/auth_model.dart';
-import 'package:medapp/pages/StartingPage.dart';
+// import 'package:medapp/pages/StartingPage.dart';
 // import 'package:medapp/pages/homepage.dart';
 import 'package:medapp/pages/onboarding_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:device_info_plus/device_info_plus.dart';
-// import 'package:medapp/pages/loginpage.dart';
+import 'package:medapp/pages/loginpage.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -29,7 +29,8 @@ Widget build(BuildContext context) {
           iconTheme: IconThemeData(color: Colors.white),
             brightness: Brightness.light,
             appBarTheme: AppBarTheme(
-              color: Colors.blue[700],
+              // color: Colors.blue[700],
+              color: Colors.green[300]
             ),
           ),
         // theme: ThemeData(brightness: Brightness.dark),
@@ -41,7 +42,7 @@ Widget build(BuildContext context) {
         } else if (snapshot.data == true) {
           return OnboardingScreen();
         } else {
-          return StartPage();
+          return LoginPage();
         }
        }
       )

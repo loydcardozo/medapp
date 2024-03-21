@@ -105,16 +105,16 @@ Widget build(BuildContext context) {
                   Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationPage()));
                 }
               ),
-              ListTile(
-                leading: Icon(
-                  Icons.payment
-                ),
-                title: Text('Settings'),
-                onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> SettingPage()));
-                }
-              ),
-              
+              // ListTile(
+              //   leading: Icon(
+              //     Icons.payment
+              //   ),
+              //   title: Text('Settings'),
+              //   onTap: () {
+              //     Navigator.push(context, MaterialPageRoute(builder: (context)=> SettingPage()));
+              //   }
+              // ),
+              //
                    GestureDetector(
             onTap: () {
               

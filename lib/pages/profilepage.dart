@@ -25,309 +25,199 @@ class _ProfilePageState extends State<ProfilePage>{
       ),
       body: SingleChildScrollView(
       child: Column(
-     children:[
-      Container(
-        height:200,
-        decoration: BoxDecoration(
-          // color: Colors.green,
-          image: DecorationImage(
-          image: AssetImage('assets/images/empty_profile.jpg',
+        children: [
+          Align(
+            alignment: Alignment.center,
+            child: CircleAvatar(
+              child: Image.asset('assets/images/empty_profile.jpg',
+              ),
+              radius: 100,
+            ),
           ),
-        ),
-          ),
-        ),
 
-        Align(alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding:EdgeInsets.only(top: 10, left: 10),
-                  child: Text('Personal Information',
-                    style: TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),                
-                ),
-                ),
-        Container(
-          child: Column(
+          Row(
             children: [
-                Container(
-                  // child: Card(
-                  //   color: Colors.blue[200],
-                  //     shape: RoundedRectangleBorder(
-                  //     borderRadius: BorderRadius.circular(20),
-                  //   ),
-                    child: Column(
-                      children: [
-                        Container(
-                          height: 50,
-                          child: Padding(
-                            padding: EdgeInsets.only(bottom:0),
-                            child: Card(
-                            color: Colors.grey[300],
-                            child: Row(
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 20),
-                                    child: Icon(
-                                      Icons.person,
-                                      color: Colors.black
-                                      ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 5),
-                                    child: Text('First name',
-                                      style: TextStyle(
-                                        color: Colors.black
-                                      )
-                                    ),
-                                  ),
-                                                    
-                                  Padding(
-                                    padding: EdgeInsets.only(left: 5),
-                                    child: Text('Loyd',
-                                      style: TextStyle(
-                                        color: Colors.black
-                                      ),
-                                    ))
-                                ]
-                              )
-                            ),
-                          ),
-                        ),
-
-                        Container(
-                          height: 50,
-                          child: Card(
-                            color: Colors.grey[300],
-                            child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Colors.black
-                                    ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('Last Name',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    )
-                                  ),
-                                ),
-                        
-                                
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('Cardozo',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    ),
-                                  ))
-                              ]
-                            )
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Align(
+                      alignment: Alignment.centerLeft,
+                      child: Text('Personal Information',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 20
                           )
-                        ),
+                      )),
+                ),
 
-                        Container(
-                          height: 50,
-                          child: Card(
-                          color: Colors.grey[300],
-                          child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Colors.black
-                                    ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('email',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    )
-                                  ),
-                                ),
-                        
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('loyd@gmail.com',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    ),
-                                  ))
-                              ]
-                            )
-                          ),
-                        ),
-
-                        Container(
-                          height: 50,
-                          child: Card(
-                          color: Colors.grey[300],
-                          child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Colors.black
-                                    ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('Date of Birth',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    )
-                                  ),
-                                ),
-                        
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('07-11-02',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    ),
-                                  ))
-                              ]
-                            )
-                          ),
-                        ),
-
-                        Container(
-                          height: 50,
-                          child: Card(
-                          color: Colors.grey[300],
-                          child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Colors.black
-                                    ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('address',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    )
-                                  ),
-                                ),
-                        
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('private te',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    ),
-                                  ))
-                              ]
-                            )
-                          ),
-                        ),
-
-                        Container(
-                          height: 50,
-                          child: Card(
-                          color: Colors.grey[300],
-                          child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Colors.black
-                                    ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('phone number',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                    )
-                                  ),
-                                ),
-                        
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('223232332',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    ),
-                                  ))
-                              ]
-                            )
-                          ),
-                        ),
-
-                        Container(
-                          height: 50,
-                          child: Card(
-                          color: Colors.grey[300],
-                          child: Row(
-                              children: [
-                                Padding(
-                                  padding: EdgeInsets.only(left: 20),
-                                  child: Icon(
-                                    Icons.person,
-                                    color: Colors.black,
-                                    ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('health Info',
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                    )
-                                  ),
-                                ),
-                        
-                                Padding(
-                                  padding: EdgeInsets.only(left: 5),
-                                  child: Text('kya karega janke',
-                                    style: TextStyle(
-                                      color: Colors.black
-                                    ),
-                                  ))
-                              ]
-                            )
-                          ),
-                        ),
-
-                      ]
+                TextButton(
+                  onPressed: () {
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
+                  },
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: Text('Edit Button',
+                        style: TextStyle(
+                          color: Colors.blue
+                        )
+                      ),
                     ),
                 ),
-                GestureDetector(
-            onTap: () {
-              
-            },
-            child: Container(
-              margin: EdgeInsets.only(left: 20, right:20, top:20),
-              height:50,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                color: Colors.red
+            ],
+          ),
+          Container(
+            margin: EdgeInsets.only(left: 10, right: 10),
+            // width: double.infinity,
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              borderRadius: BorderRadius.only(
+                topRight: Radius.circular(10),
+                topLeft: Radius.circular(10)
               ),
-              child: Center(
-                child: Text('Log out',
-                  style: TextStyle(
-                    color: Colors.white
-                  )
-                ),
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.grey
+                )
               )
             ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Icon(
+                    Icons.person,
+                    color: Colors.black54
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text('Full Name',
+                    style: TextStyle(
+                      color: Colors.black54
+                    ),
+                  ),
+                ),
+                
+                Padding(
+                  padding: EdgeInsets.only(left: 30),
+                  child: Align(
+                      alignment: Alignment.centerRight,
+                      child: Text('Loyd Cardozo',
+                        style: TextStyle(
+                          color: Colors.black54
+                        )
+                      )),
+                )
+              ]
+            )
+          ),
+
+          Container(
+            margin: EdgeInsets.only(left: 10, right: 10),
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.grey
+                )
+              )
+            ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Icon(
+                    Icons.email,
+                    color: Colors.black54
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text('Email',
+                    style: TextStyle(
+                      color: Colors.black54
+                    )
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.only(left: 50),
+                  child: Text('loyd.cardozo@gmail.com',
+                    style: TextStyle(
+                      color: Colors.black54
+                    )
+                  ),
+                )
+              ],
+            )
+          ),
+
+          Container(
+            margin: EdgeInsets.only(left: 10, right: 10),
+            height: 40,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.black54
+                )
+              )
+            ),
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Icon(
+                    Icons.lock,
+                    color: Colors.black54
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Text('password',
+                    style: TextStyle(
+                      color: Colors.black54
+                    )
+                  ),
+                ),
+
+                Padding(
+                  padding: EdgeInsets.only(left: 20),
+                  child: Text('deded',
+                    style: TextStyle(
+                      color: Colors.black54
+                    )
+                  ),
+                )
+              ],
+            )
+          ),
+
+          Container(
+            margin: EdgeInsets.only(left: 10, right: 10),
+            height:40,
+            decoration: BoxDecoration(
+              color: Colors.grey[300],
+              border: Border(
+                bottom: BorderSide(
+                  color: Colors.black54
+                )
+              )
+            )
+          ),
+
+          Container(
+            height: 40,
+            margin: EdgeInsets.only(left: ),
+            decoration: BoxDecoration(
+              color: Colors.grey[300]
+            )
           )
-            ]
-          ),          
-        )
-     ]
+
+        ]
       )
       )
     );

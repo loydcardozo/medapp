@@ -124,7 +124,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                           // }
 
                           if (token != null) {
-                            auth.loginSuccess();
+                            // auth.loginSuccess();
                             Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                           } else {
                             print('Token is null. Please log in again.');
@@ -172,7 +172,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 Row(
                   children: [
                     Padding(padding: EdgeInsets.only(left: 50)),
-                    Text('dont have an account'),
+                    Text("don't have an account"),
                     TextButton(
                       style: TextButton.styleFrom(
                     foregroundColor: Colors.blue,
