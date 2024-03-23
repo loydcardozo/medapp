@@ -30,7 +30,8 @@ Widget build(BuildContext context) {
             brightness: Brightness.light,
             appBarTheme: AppBarTheme(
               // color: Colors.blue[700],
-              color: Colors.green[300]
+              // color: Colors.green[300]
+              color: Colors.teal,
             ),
           ),
         // theme: ThemeData(brightness: Brightness.dark),

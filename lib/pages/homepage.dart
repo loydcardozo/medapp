@@ -26,18 +26,32 @@ Widget build(BuildContext context) {
                 Navigator.push(context, MaterialPageRoute(builder: (context) => ConvoPage()));
               },
             ),
+            // Padding(
+            //   padding: EdgeInsets.only(right: 5.0),
+            //   child: IconButton(
+            //   icon: Icon(Icons.person,
+            //   size: 30.0,
+            //   color: Colors.white
+            //   ),
+            //   onPressed: () {
+            //     Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+            //   },
+            // ),
+            // ),
+
             Padding(
-              padding: EdgeInsets.only(right: 5.0),
-              child: IconButton(
-              icon: Icon(Icons.person,
-              size: 30.0,
-              color: Colors.white
-              ),    
-              onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
-              },
-            ),
-            ),
+              padding: EdgeInsets.only(right: 5),
+              child: GestureDetector(
+                onTap: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+                },
+                child: CircleAvatar(
+                  radius: 15,
+                  backgroundImage: AssetImage('assets/images/empty_profile.jpg'),
+                  backgroundColor: Colors.transparent
+                ),
+              ),
+            )
           ],
           title: Text('Home',
             style: TextStyle(
@@ -148,30 +162,47 @@ Widget build(BuildContext context) {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Padding(padding: EdgeInsets.only(left: 10.0, top: 10),
-                child: Text(
-                'Book Your Appointment',
-                  style: TextStyle(
-                      fontSize: 40,
-                      fontWeight: FontWeight.bold,
-                    ),
-              ),
-              ),
-              SizedBox(height: 20,),
-              Padding(padding: EdgeInsets.only(right: 10.0, left: 10),
-                child: TextField(
-                decoration: InputDecoration(
-                  labelText: 'search',
-                  prefixIcon: Icon(
-                    Icons.search,
-                  ),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(30.0)),
-
-                  ),
+              Container(
+                height: 250,
+                decoration: BoxDecoration(
+                  // color: Colors.green[300],
+                  color: Colors.teal,
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)
+                  )
                 ),
+                child: Column(
+                  children: [
+                    Padding(padding: EdgeInsets.only(left: 10.0, top: 10),
+                      child: Text(
+                        'Book Your Appointment',
+                        style: TextStyle(
+                          fontSize: 40,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 20,),
+                    Padding(padding: EdgeInsets.only(right: 10.0, left: 10),
+                      child: TextField(
+                        decoration: InputDecoration(
+                          labelText: 'search',
+                          prefixIcon: Icon(
+                            Icons.search,
+                            color: Colors.white
+                          ),
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ]
+                )
               ),
-              ),
+
               // Image(image: AssetImage('assets/images/banner.png'),
               // ),
               // Column(

@@ -141,10 +141,14 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                       child: Container(
                         height: 50,
                         decoration: BoxDecoration(
-                            color: Colors.green,
+                            color: Colors.green[300],
                             borderRadius: BorderRadius.circular(10)
                         ),
-                        child: Center(child: Text('Login'),
+                        child: Center(child: Text('Login',
+                          style: TextStyle(
+                            color: Colors.white
+                          )
+                        ),
                         ),
                       ),
                     );

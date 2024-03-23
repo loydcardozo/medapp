@@ -26,12 +26,25 @@ class _ProfilePageState extends State<ProfilePage>{
       body: SingleChildScrollView(
       child: Column(
         children: [
-          Align(
-            alignment: Alignment.center,
-            child: CircleAvatar(
-              child: Image.asset('assets/images/empty_profile.jpg',
+          Container(
+            height: 200,
+            decoration: BoxDecoration(
+                color: Colors.green[300],
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(15),
+                  bottomRight: Radius.circular(15)
+                )
+            ),
+            child: Padding(
+              padding: EdgeInsets.only(top: 10, bottom: 30),
+              child: Align(
+                alignment: Alignment.center,
+                child: CircleAvatar(
+                  radius: 90,
+                  backgroundImage: AssetImage('assets/images/empty_profile.jpg'),
+                  backgroundColor: Colors.transparent,
+                ),
               ),
-              radius: 100,
             ),
           ),
 
@@ -211,7 +224,7 @@ class _ProfilePageState extends State<ProfilePage>{
 
           Container(
             height: 40,
-            margin: EdgeInsets.only(left: ),
+            margin: EdgeInsets.only(left: 2),
             decoration: BoxDecoration(
               color: Colors.grey[300]
             )
