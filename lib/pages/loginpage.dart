@@ -43,14 +43,14 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
 
   Widget build(BuildContext context){
     return Scaffold(
-        appBar: AppBar(
-        title: Text('Login',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.bold
-          )
-        ),
-        ),
+        // appBar: AppBar(
+        // title: Text('Login',
+        //   style: TextStyle(
+        //     color: Colors.white,
+        //     fontWeight: FontWeight.bold
+        //   )
+        // ),
+        // ),
         body: SingleChildScrollView(
         child: Form(
           key: _formKey,
@@ -59,9 +59,33 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                // Padding(padding:EdgeInsets.all(10)),
-                Image.asset('assets/images/login.jpg'),
-                Padding(padding: EdgeInsets.all(20)),
+                // Image.asset('assets/images/login.jpg'),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                      onPressed: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                      },
+                      child: Text('Sign In',
+                        style: TextStyle(
+                          color: Colors.black45,
+                          fontSize: 20
+                        )
+                      )
+                  ),
+                ),
+                Align(
+                  alignment: Alignment.centerLeft,
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 70, bottom: 50),
+                    child: Text('Log in',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 40,
+                      )
+                    ),
+                  ),
+                ),
                 TextFormField(
                   controller: emailController,
                   // keyboardType: TextInputType.emailAddress,
@@ -77,8 +101,8 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                       ),
                     labelText: "Email",
                     // errorText: _isEmailValid ? null : 'Please enter a valid email',
-                    border: OutlineInputBorder(
-                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                    border: UnderlineInputBorder(
+                       // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
                 ),
@@ -98,8 +122,8 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                     prefixIcon: Icon(
                       Icons.lock,
                     ),
-                    border: OutlineInputBorder(
-                       borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                    border: UnderlineInputBorder(
+                       // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
                 ),
@@ -141,8 +165,9 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                       child: Container(
                         height: 50,
                         decoration: BoxDecoration(
-                            color: Colors.green[300],
-                            borderRadius: BorderRadius.circular(10)
+                            // color: Colors.green[300],
+                          color: Colors.black54,
+                            borderRadius: BorderRadius.circular(20)
                         ),
                         child: Center(child: Text('Login',
                           style: TextStyle(
@@ -173,49 +198,120 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 //     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
                 //   },
                 // ),
+                // Row(
+                //   children: [
+                //     Padding(padding: EdgeInsets.only(left: 50)),
+                //     Text("don't have an account"),
+                //     TextButton(
+                //       style: TextButton.styleFrom(
+                //     foregroundColor: Colors.blue,
+                //   ),
+                //   child: Text("Sign in"),
+                //   onPressed: (){
+                //     Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                //   }
+                // ),
+                //   ]
+                // ),
+                Padding(
+                    padding: EdgeInsets.only(top: 10, bottom: 20),
+                    child: Text('or login with social account')),
+
                 Row(
                   children: [
-                    Padding(padding: EdgeInsets.only(left: 50)),
-                    Text("don't have an account"),
-                    TextButton(
-                      style: TextButton.styleFrom(
-                    foregroundColor: Colors.blue,
-                  ),
-                  child: Text("Sign in"),
-                  onPressed: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
-                  }
-                ),
-                  ]
-                ),
-                Text('or'),              
-                ElevatedButton.icon(
-                    icon: Icon(
-                    MdiIcons.google,
-                  ),
-                  onPressed: () {
-                    
-                  },
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.red),
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
-                    ),
-                  label: Text(
-                    'Sign In with Google'
-                    )
-                    ),
-                ElevatedButton.icon(
-                  icon: Icon(
-                    Icons.facebook
-                  ),
-                  style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                        foregroundColor: MaterialStateProperty.all(Colors.white),
+                    Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: ElevatedButton(
+                        onPressed: () {
+
+                        },
+                        child: Row(
+                          children: [
+                            Icon(
+                              MdiIcons.google,
+                              color: Colors.black,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 5),
+                              child: Text('Google',
+                                style: TextStyle(
+                                  color: Colors.black
+                                ),
+                              ),
+                            ),
+                          ],
                         ),
-                  onPressed: () {
-          
-                  }, 
-                  label: Text('sign in with facebook')),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          side: BorderSide(
+                            width: 1,
+                            color: Colors.black54
+                          )
+                        )
+                      ),
+                    ),
+
+                    Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: ElevatedButton(
+                        onPressed: () {
+
+                          },
+                          child: Row(
+                          children: [
+                           Icon(
+                          Icons.facebook,
+                             color: Colors.black,
+                          ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 5),
+                              child: Text('Facebook',
+                                style: TextStyle(
+                                  color: Colors.black
+                                ),
+                              ),
+                            )
+                          ],
+                           ),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.white,
+                          side: BorderSide(
+                            width: 1,
+                            color: Colors.black54,
+
+                          )
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                // ElevatedButton.icon(
+                //     icon: Icon(
+                //     MdiIcons.google,
+                //   ),
+                //   onPressed: () {
+                //
+                //   },
+                //   style: ButtonStyle(
+                //       backgroundColor: MaterialStateProperty.all(Colors.red),
+                //       foregroundColor: MaterialStateProperty.all(Colors.white),
+                //     ),
+                //   label: Text(
+                //     'Sign In with Google'
+                //     )
+                //     ),
+                // ElevatedButton.icon(
+                //   icon: Icon(
+                //     Icons.facebook
+                //   ),
+                //   style: ButtonStyle(
+                //         backgroundColor: MaterialStateProperty.all(Colors.blue),
+                //         foregroundColor: MaterialStateProperty.all(Colors.white),
+                //         ),
+                //   onPressed: () {
+                //
+                //   },
+                //   label: Text('sign in with facebook')),
               ]
               )
                 ),

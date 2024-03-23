@@ -65,7 +65,7 @@ Widget build(BuildContext context) {
             children: [
               DrawerHeader(
                 decoration: BoxDecoration(
-                  color: Colors.blue[700]
+                  color: Colors.teal
                     ),
                 child: Text('Appointment',
                   style: TextStyle(
@@ -188,10 +188,12 @@ Widget build(BuildContext context) {
                     Padding(padding: EdgeInsets.only(right: 10.0, left: 10),
                       child: TextField(
                         decoration: InputDecoration(
+                          filled: true,
+                          fillColor: Colors.white,
                           labelText: 'search',
                           prefixIcon: Icon(
                             Icons.search,
-                            color: Colors.white
+                            color: Colors.black54
                           ),
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -377,12 +379,12 @@ Widget build(BuildContext context) {
                   // decoration: BoxDecoration(
                     child: Column(
                       children: [
-                      Image(
-                        height:120,
-                        width: 120,
-                        image: AssetImage('assets/images/cough.jpg'),
-                         ),
-                        //  Text('cough')
+                     CircleAvatar(
+                       radius: 50,
+                       backgroundImage: AssetImage('assets/images/cough.jpg'),
+                       backgroundColor: Colors.transparent,
+                     ),
+                         Text('cough')
                       ]
                     ),
                   // )
@@ -397,12 +399,12 @@ Widget build(BuildContext context) {
                   color: Colors.white,
                   child: Column(
                     children: [
-                      Image(
-                        height: 120,
-                        width: 120,
-                        image: AssetImage('assets/images/cough.jpg')
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/images/cough.jpg'),
+                        backgroundColor: Colors.transparent,
                       ),
-                      // Text('cough')
+                      Text('cough')
                     ]
                   ),
                 ),
@@ -416,11 +418,12 @@ Widget build(BuildContext context) {
                   color: Colors.white,
                   child: Column(
                     children: [
-                      Image(
-                        height: 120,
-                        width: 120,
-                        image: AssetImage('assets/images/cough.jpg')
-                      )
+                      CircleAvatar(
+                        radius: 50,
+                        backgroundImage: AssetImage('assets/images/cough.jpg'),
+                        backgroundColor: Colors.transparent,
+                      ),
+                      Text('cough')
                     ]
                   )
                 ),

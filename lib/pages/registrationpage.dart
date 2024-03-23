@@ -23,9 +23,9 @@ class _RegisterPageState extends State<RegisterPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Register'),
-      ),
+      // appBar: AppBar(
+      //   title: Text('Register'),
+      // ),
       body: SingleChildScrollView(
       child: Form(
         key: _formKey,
@@ -34,8 +34,36 @@ class _RegisterPageState extends State<RegisterPage>{
           child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children:[
-                Padding(padding: EdgeInsets.all(20)),
-                Image.asset('assets/images/login.png'),
+                // Image.asset('assets/images/login.png'),
+
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                    },
+                    child: Text('Login',
+                      style: TextStyle(
+                        color: Colors.black,
+                        fontSize: 20,
+                      ),
+                    )
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top: 50, bottom: 50),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text('Sign up',
+                      style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 40,
+                        fontWeight: FontWeight.bold
+                      ),
+                    ),
+                  ),
+                ),
+
             //     Padding(padding: EdgeInsets.all(10)),
             //     TextFormField(
             //       controller: firstNameController,
@@ -89,8 +117,8 @@ class _RegisterPageState extends State<RegisterPage>{
                     prefixIcon: Icon(
                       Icons.email,
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                    border: UnderlineInputBorder(
+                      // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
                 ),
@@ -109,8 +137,8 @@ class _RegisterPageState extends State<RegisterPage>{
                     prefixIcon: Icon(
                       Icons.lock,
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                    border: UnderlineInputBorder(
+                      // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
                 ),
@@ -206,7 +234,7 @@ class _RegisterPageState extends State<RegisterPage>{
                 child: Container(
                   height: 50,
                   decoration: BoxDecoration(
-                    color: Colors.green,
+                    color: Colors.black54,
                     borderRadius: BorderRadius.circular(10)
                   ),
                   child: Center(child: Text('Register',
@@ -229,34 +257,75 @@ class _RegisterPageState extends State<RegisterPage>{
                     
                   ]
                 ),  
-                Text('or'),              
-                ElevatedButton.icon(
-                    icon: Icon(
-                    MdiIcons.google,
-                  ),
-                  onPressed: () {
-                    
-                  },
-                  style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(Colors.red),
-                      foregroundColor: MaterialStateProperty.all(Colors.white),
+                Text('or'),
+                Row(
+                  children: [
+                    Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: ElevatedButton(
+                          onPressed: () {
+
+                          },
+                          child: Row(
+                            children: [
+                              Icon(
+                                MdiIcons.google,
+                                color: Colors.black,
+                              ),
+                              Padding(
+                                padding: EdgeInsets.only(left: 5),
+                                child: Text('Google',
+                                  style: TextStyle(
+                                      color: Colors.black
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                          style: ElevatedButton.styleFrom(
+                              backgroundColor: Colors.white,
+                              side: BorderSide(
+                                  width: 1,
+                                  color: Colors.black54
+                              )
+                          )
+                      ),
                     ),
-                  label: Text(
-                    'Sign In with Google'
-                    )
-                    ),
-                ElevatedButton.icon(
-                  icon: Icon(
-                    Icons.facebook
-                  ),
-                  style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.blue),
-                        foregroundColor: MaterialStateProperty.all(Colors.white),
+
+                    Padding(
+                      padding: EdgeInsets.only(left: 20),
+                      child: ElevatedButton(
+                        onPressed: () {
+
+                        },
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.facebook,
+                              color: Colors.black,
+                            ),
+                            Padding(
+                              padding: EdgeInsets.only(left: 5),
+                              child: Text('Facebook',
+                                style: TextStyle(
+                                    color: Colors.black
+                                ),
+                              ),
+                            )
+                          ],
                         ),
-                  onPressed: () {
-          
-                  }, 
-                  label: Text('sign in with facebook')),
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.white,
+                            side: BorderSide(
+                              width: 1,
+                              color: Colors.black54,
+
+                            )
+                        ),
+                      ),
+                    )
+                  ],
+                ),
               ]
           )
         ),
