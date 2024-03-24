@@ -8,9 +8,16 @@ import 'package:medapp/pages/notification.dart';
 import 'package:medapp/pages/paymenthistory.dart';
 // import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
-class HomePage extends StatelessWidget{
+class HomePage extends StatefulWidget{
 const HomePage({Key? key}) : super(key: key);
 
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  TextEditingController _searchController = TextEditingController();
+  String _searchText = '';
 @override
 Widget build(BuildContext context) {
   return Scaffold(
@@ -131,7 +138,7 @@ Widget build(BuildContext context) {
               //
                    GestureDetector(
             onTap: () {
-              
+
             },
             child: Padding(
               padding: EdgeInsets.only(top: 20),
@@ -148,12 +155,12 @@ Widget build(BuildContext context) {
                       color: Colors.white
                     )
                   ),
-                
+
               ),
                         ),
             )
                 ),
-              
+
             ],
           ),
         ),
@@ -187,6 +194,13 @@ Widget build(BuildContext context) {
                     SizedBox(height: 20,),
                     Padding(padding: EdgeInsets.only(right: 10.0, left: 10),
                       child: TextField(
+                        onTap: () {
+                          showSearch(
+                            context: context,
+                            delegate: CustomSearchDelegate(),
+                          );
+                        },
+                        controller: _searchController,
                         decoration: InputDecoration(
                           filled: true,
                           fillColor: Colors.white,
@@ -267,7 +281,7 @@ Widget build(BuildContext context) {
                                   backgroundImage: AssetImage(
                                       'assets/images/empty_profile.jpg'),
                                   radius: 20,
-                                ), 
+                                ),
                               // ),
                                                     ),
                             ),
@@ -291,7 +305,7 @@ Widget build(BuildContext context) {
                             ),
                           ]
                         ),
-                           
+
                             ]
                         ),
                     Padding(
@@ -321,7 +335,7 @@ Widget build(BuildContext context) {
                                     )
                                   ),
                                 ),
-                        
+
                                 Padding(
                                   padding: EdgeInsets.only(left:20),
                                   child: Icon(
@@ -341,15 +355,15 @@ Widget build(BuildContext context) {
                                ),
                       ),
                     ),
-                        
+
                       ]
                     ),
                     ),
                   ),
                 ),
-                  
-                
-                 
+
+
+
                 Align(alignment: Alignment.centerLeft,
                 child: Padding(
                   padding:EdgeInsets.only(top: 10, left: 10),
@@ -358,7 +372,7 @@ Widget build(BuildContext context) {
                     fontSize: 30,
                     fontWeight: FontWeight.bold,
                   ),
-                ),                
+                ),
                 ),
                 ),
               //   ]
@@ -432,7 +446,7 @@ Widget build(BuildContext context) {
         ),
             ),
               Align(
-              alignment: Alignment.centerLeft, 
+              alignment: Alignment.centerLeft,
               child: Padding(
                 padding:EdgeInsets.only(top: 10, left: 10),
                   child: Text('Categories',
@@ -485,7 +499,7 @@ Widget build(BuildContext context) {
 
                     GestureDetector(
                       onTap: () {
-                        
+
                       },
                       child: Container(
                         height: 20,
@@ -512,7 +526,7 @@ Widget build(BuildContext context) {
                     ),
                     GestureDetector(
                       onTap:() {
-                        
+
                       },
                       child: Container(
                         height: 20,
@@ -525,7 +539,7 @@ Widget build(BuildContext context) {
                     ),
                     GestureDetector(
                       onTap:() {
-                        
+
                       },
                       child: Container(
                         height: 20,
@@ -539,7 +553,7 @@ Widget build(BuildContext context) {
                 ]
                 ),
               ),
-          
+
 
               Align(
                   alignment: Alignment.centerLeft,
@@ -593,7 +607,7 @@ Widget build(BuildContext context) {
 
                     GestureDetector(
                       onTap: () {
-                        
+
                       },
                       child: Container(
                         height: 20,
@@ -620,7 +634,7 @@ Widget build(BuildContext context) {
                     ),
                     GestureDetector(
                       onTap:() {
-                        
+
                       },
                       child: Container(
                         height: 20,
@@ -633,7 +647,7 @@ Widget build(BuildContext context) {
                     ),
                     GestureDetector(
                       onTap:() {
-                        
+
                       },
                       child: Container(
                         height: 20,
@@ -655,4 +669,70 @@ Widget build(BuildContext context) {
   // ),
   );
 }
+}
+
+class CustomSearchDelegate extends SearchDelegate {
+  List<String> searchTerms = [
+    'Apple',
+    'Banana'
+  ];
+
+  @override
+  List<Widget> buildActions(BuildContext context) {
+    return [IconButton(
+      icon: Icon(Icons.clear),
+      onPressed: () {
+        query = '';
+      },
+    )
+    ];
+  }
+
+  @override
+  Widget buildLeading(BuildContext context) {
+    return IconButton(
+      icon: Icon(Icons.arrow_back),
+      onPressed: () {
+        close(context, null);
+      },
+    );
+  }
+
+  @override
+  Widget buildResults(BuildContext context) {
+    List<String> matchQuery = [];
+    for (var fruit in searchTerms) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(fruit);
+    }
+  }
+    return ListView.builder(
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
+        var result =matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
+    );
+  }
+
+  @override
+  Widget buildSuggestions(BuildContext context) {
+    List<String> matchQuery=[];
+    for (var fruit in searchTerms) {
+      if (fruit.toLowerCase().contains(query.toLowerCase())) {
+        matchQuery.add(fruit);
+      }
+    }
+    return ListView.builder(
+      itemCount: matchQuery.length,
+      itemBuilder: (context, index) {
+        var result = matchQuery[index];
+        return ListTile(
+          title: Text(result),
+        );
+      },
+    );
+  }
 }

@@ -23,10 +23,11 @@ class _RegisterPageState extends State<RegisterPage>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Colors.grey[400],
       // appBar: AppBar(
       //   title: Text('Register'),
       // ),
-      body: SingleChildScrollView(
+      body: Center(
       child: Form(
         key: _formKey,
         child: Padding(

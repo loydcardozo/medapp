@@ -43,6 +43,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
 
   Widget build(BuildContext context){
     return Scaffold(
+      backgroundColor: Colors.grey[400],
         // appBar: AppBar(
         // title: Text('Login',
         //   style: TextStyle(
@@ -51,7 +52,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
         //   )
         // ),
         // ),
-        body: SingleChildScrollView(
+        body: Center(
         child: Form(
           key: _formKey,
           child: Padding(
@@ -96,12 +97,14 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
               return null;
             },
                   decoration: InputDecoration(
+                    filled: true,
+                    fillColor: Colors.white,
                     prefixIcon: Icon(
                         Icons.email,
                       ),
-                    labelText: "Email",
+                    hintText: "Email",
                     // errorText: _isEmailValid ? null : 'Please enter a valid email',
-                    border: UnderlineInputBorder(
+                    border: OutlineInputBorder(
                        // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
@@ -118,16 +121,34 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
             },
                   decoration: InputDecoration(
                     labelText: "Password",
+                    filled: true,
+                    fillColor: Colors.white,
                     // errorText: _isEmailValid ? null : 'Please enter a valid email',
                     prefixIcon: Icon(
                       Icons.lock,
                     ),
-                    border: UnderlineInputBorder(
+                    border: OutlineInputBorder(
                        // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
                 ),
-                SizedBox(height: 40,),
+
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    style: TextButton.styleFrom(
+                      foregroundColor: Colors.blue,
+                    ),
+                    child: Text('Forgot Password',
+                      style: TextStyle(
+                        color: Colors.black54
+                      ),
+                    ),
+                    onPressed: () {
+                      Navigator.push(context,MaterialPageRoute(builder: (context) => ForgotPassPage()));
+                    },
+                  ),
+                ),
                 Consumer(
                   builder: (context, auth, child) {
                     return GestureDetector(
@@ -183,15 +204,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
             // )
             // )
                 // ),
-                TextButton(
-                  style: TextButton.styleFrom(
-                    foregroundColor: Colors.blue,
-                  ),
-                  child: Text('Forgot Password'),
-                  onPressed: () {
-                    Navigator.push(context,MaterialPageRoute(builder: (context) => ForgotPassPage()));
-                  },
-                ),
+
                 // ElevatedButton(
                 //   child: Text("Login"),
                 //   onPressed: (){
@@ -213,9 +226,25 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 // ),
                 //   ]
                 // ),
-                Padding(
-                    padding: EdgeInsets.only(top: 10, bottom: 20),
-                    child: Text('or login with social account')),
+                Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                        thickness: 2,
+                        color: Colors.black54
+                      ),
+                    ),
+                    Padding(
+                        padding: EdgeInsets.only(top: 20, bottom: 20, left: 5, right:5),
+                        child: Text('or login with social account')),
+                    Expanded(
+                      child: Divider(
+                        thickness: 2,
+                        color: Colors.black54
+                      ),
+                    )
+                  ],
+                ),
 
                 Row(
                   children: [
