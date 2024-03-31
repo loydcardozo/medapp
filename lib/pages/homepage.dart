@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:medapp/pages/conversation_list.dart';
 import 'package:medapp/pages/profilepage.dart';
-import 'package:medapp/pages/setting.dart';
+// import 'package:medapp/pages/setting.dart';
 import 'package:medapp/pages/appointment_list.dart';
 import 'package:medapp/pages/doctors_list.dart';
 import 'package:medapp/pages/notification.dart';
 import 'package:medapp/pages/paymenthistory.dart';
 // import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class HomePage extends StatefulWidget{
 const HomePage({Key? key}) : super(key: key);
@@ -17,7 +18,7 @@ const HomePage({Key? key}) : super(key: key);
 
 class _HomePageState extends State<HomePage> {
   TextEditingController _searchController = TextEditingController();
-  String _searchText = '';
+  // String _searchText = '';
 @override
 Widget build(BuildContext context) {
   return Scaffold(
@@ -30,7 +31,7 @@ Widget build(BuildContext context) {
               color: Colors.white,
               ),
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ConvoPage()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ConvoPage()));
               },
             ),
             // Padding(
@@ -41,7 +42,7 @@ Widget build(BuildContext context) {
             //   color: Colors.white
             //   ),
             //   onPressed: () {
-            //     Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+            //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfilePage()));
             //   },
             // ),
             // ),
@@ -50,7 +51,7 @@ Widget build(BuildContext context) {
               padding: EdgeInsets.only(right: 5),
               child: GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfilePage()));
                 },
                 child: CircleAvatar(
                   radius: 15,
@@ -87,7 +88,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('appointments'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => AppointmentListPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => AppointmentListPage()));
                 },
               ),
               ListTile(
@@ -96,7 +97,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('chats'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => ConvoPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ConvoPage()));
                 }
               ),
               ListTile(
@@ -105,7 +106,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('Doctors List'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=> DocListPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> DocListPage()));
                 }
               ),
               ListTile(
@@ -114,7 +115,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('Payment History'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => PaymentHistoryPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PaymentHistoryPage()));
                 }
               ),
               ListTile(
@@ -123,7 +124,7 @@ Widget build(BuildContext context) {
                 ),
                 title: Text('Notification'),
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => NotificationPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => NotificationPage()));
                 }
               ),
               // ListTile(
@@ -132,7 +133,7 @@ Widget build(BuildContext context) {
               //   ),
               //   title: Text('Settings'),
               //   onTap: () {
-              //     Navigator.push(context, MaterialPageRoute(builder: (context)=> SettingPage()));
+              //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> SettingPage()));
               //   }
               // ),
               //
@@ -173,7 +174,7 @@ Widget build(BuildContext context) {
                 height: 250,
                 decoration: BoxDecoration(
                   // color: Colors.green[300],
-                  color: Colors.teal,
+                    color: HexColor("#425E7A"),
                   borderRadius: BorderRadius.only(
                     bottomLeft: Radius.circular(10),
                     bottomRight: Radius.circular(10)
@@ -242,7 +243,7 @@ Widget build(BuildContext context) {
                     padding: EdgeInsets.only(left: 20, top: 10),
                     child: TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context)=> AppointmentListPage()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> AppointmentListPage()));
                       },
                       child: Text('See More',
                         style: TextStyle(

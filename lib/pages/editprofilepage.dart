@@ -16,7 +16,7 @@ class EditProfilePage extends StatefulWidget{
                   size: 30,
                 ),
                 onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ProfilePage()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ProfilePage()));
             },
               )
           ],

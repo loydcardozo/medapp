@@ -34,7 +34,7 @@ class ConfirmBook extends StatelessWidget{
 
               GestureDetector(
                 onTap: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                 },
                 child: Container(
                   height: 70,

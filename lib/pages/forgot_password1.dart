@@ -32,7 +32,7 @@ class _ForgotPassPageState extends State<ForgotPassPage>{
               ),
               ElevatedButton(
                 onPressed: () {
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => VerifyPage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => VerifyPage()));
                 }, 
                 child: Text('Send')
                 )

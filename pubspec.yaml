@@ -44,6 +44,8 @@ dependencies:
   provider: ^6.1.2
   logger: ^2.2.0
   faker: ^2.1.0
+  hexcolor: ^3.0.1
+  font_awesome_flutter: ^10.7.0
 
 dev_dependencies:
   flutter_test:

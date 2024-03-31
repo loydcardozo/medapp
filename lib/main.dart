@@ -7,6 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:device_info_plus/device_info_plus.dart';
 import 'package:medapp/pages/loginpage.dart';
 import 'package:provider/provider.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 void main() {
   runApp(MyApp());
@@ -22,6 +23,38 @@ Widget build(BuildContext context) {
     child: MaterialApp(
        debugShowCheckedModeBanner: false,
         theme: ThemeData(
+            scaffoldBackgroundColor: HexColor("#425E7A"),
+          // bottomNavigationBarTheme: BottomNavigationBarThemeData(
+          //   backgroundColor: Colors.red,
+          //   selectedItemColor: Colors.white,
+          //   showSelectedLabels: true,
+          //   showUnselectedLabels: false,
+          //   elevation: 10,
+          //   type: BottomNavigationBarType.fixed,
+          // ),
+          inputDecorationTheme: InputDecorationTheme(
+            focusColor: Colors.greenAccent,
+            border:  OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8)),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(
+                color: Colors.greenAccent
+              )
+            ),
+            errorBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.all(Radius.circular(8)),
+              borderSide: BorderSide(
+                color: Colors.red
+              )
+            ),
+            enabledBorder: OutlineInputBorder(
+                borderRadius: BorderRadius.all(Radius.circular(8)),
+  ),
+            floatingLabelStyle: TextStyle(color: Colors.greenAccent),
+            prefixIconColor: Colors.black38,
+          ),
           // textTheme: TextTheme(
           //   displayLarge: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
           //   bodyLarge: TextStyle(fontSize: 18, color: Colors.white),
@@ -31,9 +64,14 @@ Widget build(BuildContext context) {
             appBarTheme: AppBarTheme(
               // color: Colors.blue[700],
               // color: Colors.green[300]
-              color: Colors.teal,
+              color: HexColor("#3B3B40"),
             ),
           ),
+        // initialRoute: '/',
+        // routes: {
+        //  '/':(context) => LoginPage(),
+        //   'main': (context) =>  HomePage(),
+        // },
         // theme: ThemeData(brightness: Brightness.dark),
       home: FutureBuilder<bool>(
        future: shouldShowOnboarding(getInstallationId),

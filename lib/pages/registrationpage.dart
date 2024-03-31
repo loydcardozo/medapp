@@ -19,6 +19,7 @@ class _RegisterPageState extends State<RegisterPage>{
   // TextEditingController addressController = TextEditingController();
   // TextEditingController phoneNumberController = TextEditingController();
   // TextEditingController HealthInfoController = TextEditingController();
+  bool obsecurePass = true;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +28,7 @@ class _RegisterPageState extends State<RegisterPage>{
       // appBar: AppBar(
       //   title: Text('Register'),
       // ),
-      body: Center(
+      body: SingleChildScrollView(
       child: Form(
         key: _formKey,
         child: Padding(
@@ -41,7 +42,7 @@ class _RegisterPageState extends State<RegisterPage>{
                   alignment: Alignment.centerRight,
                   child: TextButton(
                     onPressed: () {
-                      Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
                     },
                     child: Text('Login',
                       style: TextStyle(
@@ -126,7 +127,8 @@ class _RegisterPageState extends State<RegisterPage>{
                 Padding(padding: EdgeInsets.all(10)),
                 TextFormField(
                   controller: passwordController,
-                  obscureText: true,
+                  obscureText: obsecurePass,
+                  keyboardType: TextInputType.visiblePassword,
                   validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
@@ -137,6 +139,22 @@ class _RegisterPageState extends State<RegisterPage>{
                     labelText: 'Password',
                     prefixIcon: Icon(
                       Icons.lock,
+                    ),
+                    prefixIconColor: Colors.black38,
+                    suffixIcon: IconButton(
+                        onPressed: () {
+                          setState(() {
+                            obsecurePass = !obsecurePass;
+                          });
+                        },
+                        icon: obsecurePass
+                            ? Icon(
+                            Icons.visibility_off_outlined,
+                            color: Colors.black38
+                        ) : Icon(
+                            Icons.visibility_outlined,
+                            color: Colors.black38
+                        )
                     ),
                     border: UnderlineInputBorder(
                       // borderRadius: BorderRadius.all(Radius.circular(30.0)),
@@ -229,7 +247,7 @@ class _RegisterPageState extends State<RegisterPage>{
                     SnackBar(content: Text('Processing Data')),
                   );
 
-                  Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                  Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
                 }
                 },
                 child: Container(
@@ -251,7 +269,7 @@ class _RegisterPageState extends State<RegisterPage>{
                     Text('Already have an account'),
                     TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => LoginPage()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
                       },
                       child: Text('Login'),
                     ),

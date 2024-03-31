@@ -23,7 +23,7 @@ class _ChatsPageState extends State<ChatsPage>{
               color: Colors.white,
               ),
               onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ));
               },
             ),
             Padding(
@@ -34,7 +34,7 @@ class _ChatsPageState extends State<ChatsPage>{
               color: Colors.white
               ),    
               onPressed: () {
-                // Navigator.push(context, MaterialPageRoute(builder: (context) => ));
+                // Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ));
               },
             ),
             ),

@@ -34,7 +34,7 @@ const ConvoPage({Key? key}) : super(key: key);
               ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ChatsPage()));
                   },
                   child: Expanded(
                     child: Container(

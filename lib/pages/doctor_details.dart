@@ -150,7 +150,7 @@ class _DocDetailPageState extends State<DocDetailPage> {
                     
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
                           },
                           child: Container(
                             margin: EdgeInsets.only(left:20, right:20, top: 20),
@@ -171,7 +171,7 @@ class _DocDetailPageState extends State<DocDetailPage> {
                       
                         GestureDetector(
                           onTap: () {
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => ChatsPage()));
+                            Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ChatsPage()));
                           },
                           child: Container(
                             height: 50,

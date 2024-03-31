@@ -38,7 +38,7 @@ class _DocListPageState extends State<DocListPage> {
                 children: [
                  GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
                   },
                   child: Padding(
                     padding: EdgeInsets.only(top:10, left: 0, right: 0),
@@ -88,7 +88,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                              GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
@@ -113,7 +113,7 @@ class _DocListPageState extends State<DocListPage> {
 
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
                   },
                   child: Padding(
                     padding: EdgeInsets.only(top:10, left: 0, right: 0),
@@ -163,7 +163,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                               GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
@@ -189,7 +189,7 @@ class _DocListPageState extends State<DocListPage> {
 
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
                   },
                   child: Padding(
                     padding: EdgeInsets.only(top:10, left: 0, right: 0),
@@ -239,7 +239,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                               GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
@@ -265,7 +265,7 @@ class _DocListPageState extends State<DocListPage> {
 
                 GestureDetector(
                   onTap: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
                   },
                   child: Padding(
                     padding: EdgeInsets.only(top:10, left: 0, right: 0),
@@ -315,7 +315,7 @@ class _DocListPageState extends State<DocListPage> {
                              ), 
                              GestureDetector(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context) => BookPage()));
+                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
                               },
                                child: Container(
                                 margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),

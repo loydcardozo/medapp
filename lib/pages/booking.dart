@@ -183,7 +183,7 @@ class _BookPageState extends State<BookPage> {
             padding: EdgeInsets.only(top: 20, bottom: 20),
             child: GestureDetector(
               onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => ConfirmBook()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ConfirmBook()));
               },
               child: Container(
                 height: 50,

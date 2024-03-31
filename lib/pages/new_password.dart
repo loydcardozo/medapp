@@ -41,7 +41,7 @@ class _NewPassPageState extends State<NewPassPage>{
               ),
               ElevatedButton(
                 onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
               }, 
               child: Text('Confirm'),
               )

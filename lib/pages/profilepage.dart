@@ -17,7 +17,7 @@ class _ProfilePageState extends State<ProfilePage>{
               size: 30,
             ),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
+              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
             },
           )
         ],
@@ -64,7 +64,7 @@ class _ProfilePageState extends State<ProfilePage>{
 
                 TextButton(
                   onPressed: () {
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
+                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
                   },
                     child: Padding(
                       padding: EdgeInsets.only(left: 10, right: 10),

@@ -18,6 +18,9 @@ class _LoginPageState extends State<LoginPage> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
+  bool obsecurePass = true;
+  // bool disabled = true;
+  // function() onPressed;
 
   // bool _isEmailValid = true;
   
@@ -52,7 +55,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
         //   )
         // ),
         // ),
-        body: Center(
+        body: SingleChildScrollView(
         child: Form(
           key: _formKey,
           child: Padding(
@@ -65,7 +68,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                   alignment: Alignment.centerRight,
                   child: TextButton(
                       onPressed: () {
-                        Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RegisterPage()));
                       },
                       child: Text('Sign In',
                         style: TextStyle(
@@ -89,7 +92,8 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 ),
                 TextFormField(
                   controller: emailController,
-                  // keyboardType: TextInputType.emailAddress,
+                  keyboardType: TextInputType.emailAddress,
+                  cursorColor: Colors.greenAccent,
                   validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
@@ -102,9 +106,11 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                     prefixIcon: Icon(
                         Icons.email,
                       ),
-                    hintText: "Email",
+                    prefixIconColor: Colors.black38,
+                    hintText: "Email address",
+                    labelText: 'Email',
                     // errorText: _isEmailValid ? null : 'Please enter a valid email',
-                    border: OutlineInputBorder(
+                    border: UnderlineInputBorder(
                        // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
@@ -112,7 +118,9 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 Padding(padding: EdgeInsets.all(10.0)),
                 TextFormField(
                   controller: passwordController,
-                  obscureText: true,
+                  keyboardType: TextInputType.visiblePassword,
+                  cursorColor: Colors.greenAccent,
+                  obscureText: obsecurePass,
                   validator: (value) {
               if (value == null || value.isEmpty) {
                 return 'Please enter some text';
@@ -120,14 +128,31 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
               return null;
             },
                   decoration: InputDecoration(
-                    labelText: "Password",
+                    hintText: "Password",
+                    labelText: 'password',
                     filled: true,
                     fillColor: Colors.white,
                     // errorText: _isEmailValid ? null : 'Please enter a valid email',
                     prefixIcon: Icon(
                       Icons.lock,
                     ),
-                    border: OutlineInputBorder(
+                    prefixIconColor: Colors.black38,
+                    suffixIcon: IconButton(
+                      onPressed: () {
+                        setState(() {
+                          obsecurePass = !obsecurePass;
+                        });
+                      },
+                        icon: obsecurePass
+                            ? Icon(
+                            Icons.visibility_off_outlined,
+                            color: Colors.black38
+                        ) : Icon(
+                          Icons.visibility_outlined,
+                            color: Colors.black38
+                        )
+                    ),
+                    border: UnderlineInputBorder(
                        // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
@@ -145,7 +170,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                       ),
                     ),
                     onPressed: () {
-                      Navigator.push(context,MaterialPageRoute(builder: (context) => ForgotPassPage()));
+                      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => ForgotPassPage()));
                     },
                   ),
                 ),
@@ -185,6 +210,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                       },
                       child: Container(
                         height: 50,
+                        // onPressed: disable ? null : onPressed,
                         decoration: BoxDecoration(
                             // color: Colors.green[300],
                           color: Colors.black54,
@@ -221,7 +247,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                 //   ),
                 //   child: Text("Sign in"),
                 //   onPressed: (){
-                //     Navigator.push(context, MaterialPageRoute(builder: (context) => RegisterPage()));
+                //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RegisterPage()));
                 //   }
                 // ),
                 //   ]
