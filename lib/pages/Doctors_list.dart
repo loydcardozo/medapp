@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:medapp/component/Doctor_Card.dart';
 import 'package:medapp/pages/doctor_details.dart';
-import 'package:medapp/pages/booking.dart';
+// import 'package:medapp/pages/booking.dart';
 
 class DocListPage extends StatefulWidget{
   @override
@@ -17,332 +18,38 @@ class _DocListPageState extends State<DocListPage> {
           child: Column(
             children: [
               Padding(
-                padding: EdgeInsets.only(left: 10, right: 10, top: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: TextField(
                   decoration: InputDecoration(
-                    labelText: 'search',
+                    filled: true,
+                    fillColor: Colors.black12,
+                    labelText: 'Search',
                     prefixIcon: Icon(
                       Icons.search,
+                      color: Colors.black54,
                     ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                    border: InputBorder.none,
+                    contentPadding: EdgeInsets.zero,
+                    enabledBorder: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(10.0),
+                      borderSide: BorderSide.none,
                     ),
-                  )
+                    focusedBorder: UnderlineInputBorder(
+                      borderRadius: BorderRadius.circular(30.0),
+                      borderSide: BorderSide.none,
+                    ),
+                  ),
                 ),
               ),
-
-              ListView(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                children: [
-                 GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(top:10, left: 0, right: 0),
-                    child: Container(
-                      margin: EdgeInsets.only(left: 5, right:5),
-                      height:190,
-                      child: Card(
-                        color: Colors.white60,
-                          shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: Column(
-                          children: [
-                    
-                             Row(
-                               children: [
-                               Padding(
-                                padding: EdgeInsets.only(left:20,top:20),
-                                 child: Align(
-                                  alignment: Alignment.centerLeft,
-                                   child: CircleAvatar(
-                                      backgroundImage: AssetImage(
-                                      'assets/images/empty_profile.jpg'),
-                                      radius: 35,
-                                          ),
-                                 ),
-                               ),
-                    
-                               Column(
-                                 children:
-                                  [
-                                  Padding(
-                                  padding: EdgeInsets.only(left: 10),
-                                  child: Text('Dr Loyd Cardozo',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15
-                                    )
-                                  )),
-                    
-                                  Text('specialist'),
-                                  // Text('3 years')
-                                  ]
-                               ),
-                               
-                               ]
-                             ), 
-                             GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
-                              },
-                               child: Container(
-                                margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Colors.red[700],
-                                  borderRadius: BorderRadius.all(Radius.circular(20))
-                                ),
-                                child: Center(child: Text('Book Appointments',
-                                  style: TextStyle(
-                                    color: Colors.white
-                                  ),
-                                )),
-                               ),
-                             )
-                          ]
-                        )
-                      ),
-                    ),
-                  ),
+              Column(
+                children: List.generate(3, (index) {
+                  return DoctorCard();
+                }
                 ),
-
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(top:10, left: 0, right: 0),
-                    child: Container(
-                      margin: EdgeInsets.only(left: 5, right:5),
-                      height:190,
-                      child: Card(
-                        color: Colors.white54,
-                          shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: Column(
-                          children: [
-                    
-                             Row(
-                               children: [
-                               Padding(
-                                padding: EdgeInsets.only(left:20,top:20),
-                                 child: Align(
-                                  alignment: Alignment.centerLeft,
-                                   child: CircleAvatar(
-                                      backgroundImage: AssetImage(
-                                      'assets/images/empty_profile.jpg'),
-                                      radius: 35,
-                                          ),
-                                 ),
-                               ),
-                    
-                               Column(
-                                 children:
-                                  [
-                                  Padding(
-                                  padding: EdgeInsets.only(left: 10),
-                                  child: Text('Dr Loyd Cardozo',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15
-                                    )
-                                  )),
-                    
-                                  Text('specialist'),
-                                  // Text('3 years')
-                                  ]
-                               ),
-                               
-                               ]
-                             ), 
-                              GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
-                              },
-                               child: Container(
-                                margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Colors.red[700],
-                                  borderRadius: BorderRadius.all(Radius.circular(20))
-                                ),
-                                child: Center(child: Text('Book Appointments',
-                                  style: TextStyle(
-                                    color: Colors.white
-                               ),
-                                )
-                             )
-                               )
-                             )
-                          ]
-                        )
-                      ),
-                    ),
-                  ),
-                ),
-
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(top:10, left: 0, right: 0),
-                    child: Container(
-                      margin: EdgeInsets.only(left: 5, right:5),
-                      height:190,
-                      child: Card(
-                        color: Colors.white54,
-                          shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: Column(
-                          children: [
-                    
-                             Row(
-                               children: [
-                               Padding(
-                                padding: EdgeInsets.only(left:20,top:20),
-                                 child: Align(
-                                  alignment: Alignment.centerLeft,
-                                   child: CircleAvatar(
-                                      backgroundImage: AssetImage(
-                                      'assets/images/empty_profile.jpg'),
-                                      radius: 35,
-                                          ),
-                                 ),
-                               ),
-                    
-                               Column(
-                                 children:
-                                  [
-                                  Padding(
-                                  padding: EdgeInsets.only(left: 10),
-                                  child: Text('Dr Loyd Cardozo',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15
-                                    )
-                                  )),
-                    
-                                  Text('specialist'),
-                                  // Text('3 years')
-                                  ]
-                               ),
-                               
-                               ]
-                             ), 
-                              GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
-                              },
-                               child: Container(
-                                margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Colors.red[700],
-                                  borderRadius: BorderRadius.all(Radius.circular(20))
-                                ),
-                                child: Center(child: Text('Book Appointments',
-                                  style: TextStyle(
-                                    color: Colors.white
-                               ),
-                                )
-                             )
-                               )
-                             )
-                          ]
-                        )
-                      ),
-                    ),
-                  ),
-                ),
-
-                GestureDetector(
-                  onTap: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DocDetailPage()));
-                  },
-                  child: Padding(
-                    padding: EdgeInsets.only(top:10, left: 0, right: 0),
-                    child: Container(
-                      margin: EdgeInsets.only(left: 5, right:5),
-                      height:190,
-                      child: Card(
-                        color: Colors.white54,
-                          shape: RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: Column(
-                          children: [
-                    
-                             Row(
-                               children: [
-                               Padding(
-                                padding: EdgeInsets.only(left:20,top:20),
-                                 child: Align(
-                                  alignment: Alignment.centerLeft,
-                                   child: CircleAvatar(
-                                      backgroundImage: AssetImage(
-                                      'assets/images/empty_profile.jpg'),
-                                      radius: 35,
-                                          ),
-                                 ),
-                               ),
-                    
-                               Column(
-                                 children:
-                                  [
-                                  Padding(
-                                  padding: EdgeInsets.only(left: 10),
-                                  child: Text('Dr Loyd Cardozo',
-                                    style: TextStyle(
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15
-                                    )
-                                  )),
-                    
-                                  Text('specialist'),
-                                  // Text('3 years')
-                                  ]
-                               ),
-                               
-                               ]
-                             ), 
-                             GestureDetector(
-                              onTap: () {
-                                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => BookPage()));
-                              },
-                               child: Container(
-                                margin: EdgeInsets.only(right: 20, left: 20, top: 20, bottom: 20),
-                                height: 50,
-                                decoration: BoxDecoration(
-                                  color: Colors.red[700],
-                                  borderRadius: BorderRadius.all(Radius.circular(20))
-                                ),
-                                child: Center(child: Text('Book Appointments',
-                                  style: TextStyle(
-                                    color: Colors.white
-                               ),
-                                )
-                             )
-                               )
-                             )
-                          ]
-                        )
-                      ),
-                    ),
-                  ),
-                ),
-                ]
-              )
-            ],
-            )
-        )
+              ),
+            ]
+      )
+    )
       );
   }
 }

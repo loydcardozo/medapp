@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:medapp/pages/forgot_password1.dart';
 import 'package:medapp/pages/homepage.dart';
 import 'package:medapp/pages/registrationpage.dart';
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'login2Page.dart';
+// import 'dart:convert';
+// import 'package:http/http.dart' as http;
 // import 'package:medapp/api/loginModel.dart';
-import 'package:medapp/providers/dio_provider.dart';
-import 'package:provider/provider.dart';
+// import 'package:provider/provider.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -22,111 +21,90 @@ class _LoginPageState extends State<LoginPage> {
   // bool disabled = true;
   // function() onPressed;
 
-  // bool _isEmailValid = true;
-  
-  void login(String email , password) async {
-    
-    try{
-      
-var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
+  bool _isEmailValid = true;
 
-      if(response.statusCode == 200){
-        
-        var data = jsonDecode(response.body.toString());
-        print(data['token']);
-        print('Login successfully');
-
-      }else {
-        print('failed');
-      }
-    }catch(e){
-      print(e.toString());
-    }
-  }
 
   Widget build(BuildContext context){
     return Scaffold(
       backgroundColor: Colors.grey[400],
-        // appBar: AppBar(
-        // title: Text('Login',
-        //   style: TextStyle(
-        //     color: Colors.white,
-        //     fontWeight: FontWeight.bold
-        //   )
-        // ),
-        // ),
-        body: SingleChildScrollView(
-        child: Form(
-          key: _formKey,
-          child: Padding(
-            padding:EdgeInsets.all(20),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                // Image.asset('assets/images/login.jpg'),
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
+      body: SingleChildScrollView(
+      child: Form(
+              key: _formKey,
+              child: Padding(
+              padding:EdgeInsets.all(20),
+              child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                      Align(
+                        alignment: Alignment.centerRight,
+                      child: TextButton(
                       onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RegisterPage()));
-                      },
+                        Navigator.pushReplacement(
+                          context, MaterialPageRoute(
+                            builder: (context) => RegisterPage()
+                            )
+                          );
+                        },
                       child: Text('Sign In',
                         style: TextStyle(
-                          color: Colors.black45,
-                          fontSize: 20
-                        )
-                      )
-                  ),
-                ),
-                Align(
-                  alignment: Alignment.centerLeft,
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 70, bottom: 50),
-                    child: Text('Log in',
-                      style: TextStyle(
+                              color: Colors.black45,
+                              fontSize: 20
+                              )
+                            )
+                          ),
+                        ),
+
+                      Align(
+                        alignment: Alignment.centerLeft,
+                        child: Padding(
+                        padding: EdgeInsets.only(top: 70, bottom: 50),
+                        child: Text('Log in',
+                        style: TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 40,
                       )
                     ),
                   ),
                 ),
+
                 TextFormField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   cursorColor: Colors.greenAccent,
                   validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    filled: true,
-                    fillColor: Colors.white,
-                    prefixIcon: Icon(
-                        Icons.email,
-                      ),
-                    prefixIconColor: Colors.black38,
-                    hintText: "Email address",
-                    labelText: 'Email',
-                    // errorText: _isEmailValid ? null : 'Please enter a valid email',
-                    border: UnderlineInputBorder(
-                       // borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                        return null;
+                      },
+                decoration: InputDecoration(
+                  filled: true,
+                  fillColor: Colors.white,
+                  prefixIcon: Icon(
+                                Icons.email,
+                              ),
+                  prefixIconColor: Colors.black38,
+                  hintText: "Email address",
+                  labelText: 'Email',
+                  // errorText: _isEmailValid ? null : 'Please enter a valid email',
+                  border: UnderlineInputBorder(
+                  // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
                 ),
+
                 Padding(padding: EdgeInsets.all(10.0)),
-                TextFormField(
-                  controller: passwordController,
-                  keyboardType: TextInputType.visiblePassword,
-                  cursorColor: Colors.greenAccent,
-                  obscureText: obsecurePass,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
+                  TextFormField(
+                    controller: passwordController,
+                    keyboardType: TextInputType.visiblePassword,
+                    cursorColor: Colors.greenAccent,
+                    obscureText: obsecurePass,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                        return null;
+                      },
                   decoration: InputDecoration(
                     hintText: "Password",
                     labelText: 'password',
@@ -134,8 +112,8 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                     fillColor: Colors.white,
                     // errorText: _isEmailValid ? null : 'Please enter a valid email',
                     prefixIcon: Icon(
-                      Icons.lock,
-                    ),
+                            Icons.lock,
+                             ),
                     prefixIconColor: Colors.black38,
                     suffixIcon: IconButton(
                       onPressed: () {
@@ -143,7 +121,7 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                           obsecurePass = !obsecurePass;
                         });
                       },
-                        icon: obsecurePass
+                    icon: obsecurePass
                             ? Icon(
                             Icons.visibility_off_outlined,
                             color: Colors.black38
@@ -158,100 +136,32 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                   ),
                 ),
 
-                Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    style: TextButton.styleFrom(
-                      foregroundColor: Colors.blue,
-                    ),
-                    child: Text('Forgot Password',
-                      style: TextStyle(
-                        color: Colors.black54
-                      ),
-                    ),
-                    onPressed: () {
-                      Navigator.pushReplacement(context,MaterialPageRoute(builder: (context) => ForgotPassPage()));
-                    },
-                  ),
-                ),
-                Consumer(
-                  builder: (context, auth, child) {
-                    return GestureDetector(
-                      onTap: () async {
-                        login(emailController.text.toString(), passwordController.text.toString());
-                        if (_formKey.currentState!.validate()) {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            SnackBar(content: Text('Processing Data')),
-                          );
-                          //   if (_isEmailValid) {
-                          //   String enteredPassword = passwordController.text;
-                          //   print('Email: $enteredEmail, Password: $enteredPassword');
-                          final token = await DioProvider().getToken(emailController.text, passwordController.text);
+                       GestureDetector(
+                        onTap: () {
+    if (_isEmailValid) {
+      String enteredEmail = emailController.text;
+      String enteredPassword = passwordController.text;
+      print('Email: $enteredEmail, Password: $enteredPassword');}
 
-                          // if (token) {
-                          //   auth.loginSuccess();
-                          //   Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                          // }
-
-                          if (token != null) {
-                            // auth.loginSuccess();
-                            Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                          } else {
-                            print('Token is null. Please log in again.');
-                            Navigator.pushReplacementNamed(context, '/login');
-                          }
-
-                        }
-                        // },
-                        // String enteredEmail = emailController.text.trim();
-                        // bool isValidEmail = RegExp(r'^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$').hasMatch(enteredEmail);
-                        // setState(() {
-                        // _isEmailValid = isValidEmail;
-                      },
-                      child: Container(
-                        height: 50,
-                        // onPressed: disable ? null : onPressed,
-                        decoration: BoxDecoration(
-                            // color: Colors.green[300],
-                          color: Colors.black54,
-                            borderRadius: BorderRadius.circular(20)
-                        ),
-                        child: Center(child: Text('Login',
-                          style: TextStyle(
-                            color: Colors.white
-                          )
-                        ),
-                        ),
-                      ),
-                    );
-                  },
-
-                ),
-            // )
-            // )
-                // ),
-
-                // ElevatedButton(
-                //   child: Text("Login"),
-                //   onPressed: (){
-                //     Navigator.push(context, MaterialPageRoute(builder: (context) => HomePage()));
-                //   },
-                // ),
-                // Row(
-                //   children: [
-                //     Padding(padding: EdgeInsets.only(left: 50)),
-                //     Text("don't have an account"),
-                //     TextButton(
-                //       style: TextButton.styleFrom(
-                //     foregroundColor: Colors.blue,
-                //   ),
-                //   child: Text("Sign in"),
-                //   onPressed: (){
-                //     Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => RegisterPage()));
-                //   }
-                // ),
-                //   ]
-                // ),
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => HomePage()));
+                        },
+                         child: Container(
+                          height: 50,
+                          // onPressed: disable ? null : onPressed,
+                          decoration: BoxDecoration(
+                              // color: Colors.green[300],
+                            color: Colors.black54,
+                              borderRadius: BorderRadius.circular(20)
+                          ),
+                          child: Center(child: Text('Login',
+                            style: TextStyle(
+                              color: Colors.white
+                            )
+                          ),
+                          ),
+                                               ),
+                       ),
+                       
                 Row(
                   children: [
                     Expanded(
@@ -340,33 +250,10 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
                     )
                   ],
                 ),
-                // ElevatedButton.icon(
-                //     icon: Icon(
-                //     MdiIcons.google,
-                //   ),
-                //   onPressed: () {
-                //
-                //   },
-                //   style: ButtonStyle(
-                //       backgroundColor: MaterialStateProperty.all(Colors.red),
-                //       foregroundColor: MaterialStateProperty.all(Colors.white),
-                //     ),
-                //   label: Text(
-                //     'Sign In with Google'
-                //     )
-                //     ),
-                // ElevatedButton.icon(
-                //   icon: Icon(
-                //     Icons.facebook
-                //   ),
-                //   style: ButtonStyle(
-                //         backgroundColor: MaterialStateProperty.all(Colors.blue),
-                //         foregroundColor: MaterialStateProperty.all(Colors.white),
-                //         ),
-                //   onPressed: () {
-                //
-                //   },
-                //   label: Text('sign in with facebook')),
+
+                        ElevatedButton(onPressed: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context) => loginPage2()));
+                        }, child: Text("login design"))
               ]
               )
                 ),
@@ -374,18 +261,4 @@ var response = await http.post(Uri.parse("http://127.0.0.1:8000/api/login"),);
       )
     );
   }
-//   String baseurl = "http://127.0.0.1:8000/api/login";
-//   Future<List<Login>> getUsers() async {
-//     try{
-//       final response = await http.get(Uri.parse(baseurl));
-//       var data = jsonDecode.response.body.toString();
-//       if (response.statusCode == 200) {
-//         return jsonDecode(response.body);
-//     } else {
-//       return Future.error("server error");
-//     }
-//     }catch(e){
-//       return Future.error(e);
-//   }
-// } 
 }

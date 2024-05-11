@@ -1,94 +1,94 @@
 import 'package:flutter/material.dart';
-import 'package:medapp/pages/loginpage.dart';
-// import 'dart:convert';
-// import 'package:http/http.dart' as http;
 import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
+import 'package:medapp/component/customAuth.dart';
+import 'package:medapp/pages/login2Page.dart';
 
-class RegisterPage extends StatefulWidget{
+class Registerpage2 extends StatefulWidget {
+  const Registerpage2({super.key});
+
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  State<Registerpage2> createState() => _Registerpage2State();
 }
 
-class _RegisterPageState extends State<RegisterPage>{
+class _Registerpage2State extends State<Registerpage2> {
   final _formKey = GlobalKey<FormState>();
   TextEditingController NameController = TextEditingController();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
-  
   bool obsecurePass = true;
-  bool isSignIn = true;
-  
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        backgroundColor: Colors.grey[400],
-      body: SingleChildScrollView(
-      child: Form(
-        key: _formKey,
-        child: Padding(
+    return CustomAuth(
+      child: Column(
+        children: [
+          Expanded(
+              flex: 2,
+              child: SizedBox(
+                height: 10,
+              )
+          ),
+    Expanded(
+    flex: 7,
+    child: Container(
+    height: double.infinity,
+    width:  double.infinity,
+    decoration: BoxDecoration(
+    color: Colors.white,
+    borderRadius: BorderRadius.only(
+    topLeft: Radius.circular(40),
+    topRight: Radius.circular(40)
+    )
+    ),
+    child: SingleChildScrollView(
+    child: Form(
+    key: _formKey,
+      child: Padding(
           padding: EdgeInsets.all(20),
           child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children:[
                 Align(
-                  alignment: Alignment.centerRight,
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                    },
-                    child: Text('Login',
-                      style: TextStyle(
+                  alignment: Alignment.center,
+                  child: Text('Welcome',
+                    style: TextStyle(
                         color: Colors.black,
-                        fontSize: 20,
-                      ),
-                    )
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(top: 50, bottom: 50),
-                  child: Align(
-                    alignment: Alignment.centerLeft,
-                    child: Text('Sign up',
-                      style: TextStyle(
-                          color: Colors.black,
-                          fontSize: 40,
+                        fontSize: 40,
                         fontWeight: FontWeight.bold
-                      ),
                     ),
                   ),
                 ),
 
                 Padding(padding: EdgeInsets.all(10)),
                 TextFormField(
-                  controller: NameController,
-                  keyboardType: TextInputType.text,
-                  validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
-                  decoration: InputDecoration(
-                    labelText:'username',
-                    prefixIcon: Icon(
-                      Icons.person
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(Radius.circular(30.0)),
-                    ),
-                  )
+                    controller: NameController,
+                    keyboardType: TextInputType.text,
+                    validator: (value) {
+                      if (value == null || value.isEmpty) {
+                        return 'Please enter some text';
+                      }
+                      return null;
+                    },
+                    decoration: InputDecoration(
+                      labelText:'username',
+                      prefixIcon: Icon(
+                          Icons.person
+                      ),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.all(Radius.circular(30.0)),
+                      ),
+                    )
                 ),
-            
+
                 Padding(padding: EdgeInsets.all(10),),
                 TextFormField(
                   controller: emailController,
                   keyboardType: TextInputType.emailAddress,
                   validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
                   decoration: InputDecoration(
                     labelText: 'email',
                     prefixIcon: Icon(
@@ -105,11 +105,11 @@ class _RegisterPageState extends State<RegisterPage>{
                   obscureText: obsecurePass,
                   keyboardType: TextInputType.visiblePassword,
                   validator: (value) {
-              if (value == null || value.isEmpty) {
-                return 'Please enter some text';
-              }
-              return null;
-            },
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter some text';
+                    }
+                    return null;
+                  },
                   decoration: InputDecoration(
                     labelText: 'Password',
                     prefixIcon: Icon(
@@ -135,38 +135,49 @@ class _RegisterPageState extends State<RegisterPage>{
                       // borderRadius: BorderRadius.all(Radius.circular(30.0)),
                     ),
                   ),
-                ),                
-                
-                  Container(
-                    height: 50,
-                    decoration: BoxDecoration(
+                ),
+
+                SizedBox(
+                    height: 20
+                  ),
+
+                Container(
+                  height: 50,
+                  decoration: BoxDecoration(
                       color: Colors.black54,
                       borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Center(child: Text('Register',
-                      style: TextStyle(
-                        color: Colors.white
-                      ),
-                    ),),
                   ),
-                  // );
-                  // }
-                
-                
-                Row(
-                  children:[
-                    Padding(padding: EdgeInsets.only(right:50)),
-                    Text('Already have an account'),
-                    TextButton(
-                      onPressed: () {
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => LoginPage()));
-                      },
-                      child: Text('Login'),
+                  child: Center(child: Text('Register',
+                    style: TextStyle(
+                        color: Colors.white
                     ),
-                    
-                  ]
-                ),  
-                Text('or'),
+                  ),),
+                ),
+
+                SizedBox(
+                    height: 20
+                ),
+
+                Row(
+                  children: [
+                    Expanded(
+                      child: Divider(
+                          thickness: 2,
+                          color: Colors.black54
+                      ),
+                    ),
+                    Padding(
+                        padding: EdgeInsets.only(top: 20, bottom: 20, left: 5, right:5),
+                        child: Text('or sign in with')),
+                    Expanded(
+                      child: Divider(
+                          thickness: 2,
+                          color: Colors.black54
+                      ),
+                    )
+                  ],
+                ),
+
                 Row(
                   children: [
                     Padding(
@@ -232,14 +243,31 @@ class _RegisterPageState extends State<RegisterPage>{
                             )
                         ),
                       ),
-                    )
+                    ),
                   ],
+                ),
+                Row(
+                    children:[
+                      Padding(padding: EdgeInsets.only(right:50)),
+                      Text('Already have an account'),
+                      TextButton(
+                        onPressed: () {
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => loginPage2()));
+                        },
+                        child: Text('Login'),
+                      ),
+
+                    ]
                 ),
               ]
           )
-        ),
-      )
-      )
+      ),
+    ),
+    ),
+    ),
+    ),
+        ],
+      ),
     );
   }
 }

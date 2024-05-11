@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:medapp/pages/editprofilepage.dart';
+import 'package:google_fonts/google_fonts.dart';
+// import 'package:medapp/pages/editprofilepage.dart';
+import 'package:medapp/component/profile_details.dart';
 
 class ProfilePage extends StatefulWidget{
   @override
@@ -11,228 +13,117 @@ class _ProfilePageState extends State<ProfilePage>{
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        actions: [
-          IconButton(
-            icon: Icon(Icons.edit,
-              size: 30,
-            ),
-            onPressed: () {
-              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
-            },
-          )
-        ],
-        title: Text("Profile"),
+        leading: BackButton(),
+        title: Text('Profile'),
       ),
       body: SingleChildScrollView(
-      child: Column(
-        children: [
-          Container(
-            height: 200,
-            decoration: BoxDecoration(
-                color: Colors.green[300],
-                borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(15),
-                  bottomRight: Radius.circular(15)
-                )
-            ),
-            child: Padding(
-              padding: EdgeInsets.only(top: 10, bottom: 30),
-              child: Align(
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              SizedBox(height: 30),
+              Align(
                 alignment: Alignment.center,
-                child: CircleAvatar(
-                  radius: 90,
-                  backgroundImage: AssetImage('assets/images/empty_profile.jpg'),
-                  backgroundColor: Colors.transparent,
+                child: Column(
+                  children: [
+                    CircleAvatar(
+                        radius: 80,
+                        backgroundImage: AssetImage('assets/images/empty_profile.jpg'),
+                        backgroundColor: Colors.transparent
+                    ),
+                    TextButton(onPressed: () {
+
+                    }, child: Text('Change Profile Picture',
+                        style: TextStyle(
+                          color: Color.fromARGB(255, 3, 190, 150),
+                        )
+                    )
+                    ),
+                    SizedBox(height: 10),
+                    Divider(),
+                    SizedBox(height: 10),
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text('Profile Information',
+                        style: TextStyle(
+                          fontSize: 20
+                        ),
+                        )
+                    ),
+                    SizedBox(height: 10),
+                    Profile_details(
+                      title: 'Name',
+                      value: 'Loyd Cardozo',
+                      onPressed: () {}
+                    ),
+                    Profile_details(
+                        onPressed: () {},
+                        title: 'Email',
+                        value: 'loyd@gmail.com'
+                    ),
+
+                    Divider(),
+
+                    Align(
+                        alignment: Alignment.centerLeft,
+                        child: Text('Personal Information',
+                          style: TextStyle(
+                              fontSize: 20
+                          ),
+                        )
+                    ),
+
+                    Profile_details(
+                        onPressed: () {},
+                        title: 'DOB',
+                        value: '07-11-2002'
+                    ),
+
+                    Profile_details(
+                        onPressed: () {},
+                        title: 'address',
+                        value: 'somewhere'
+                    ),
+                    Profile_details(
+                        onPressed: () {},
+                        title: 'Phone Number',
+                        value: '9322234333'
+                    ),
+                    Divider(),
+
+                    SizedBox(height: 10),
+                    Container(
+                      height: MediaQuery.of(context).size.height * 0.06,
+                      width: MediaQuery.of(context).size.width * 0.7,
+                      child: ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.red,
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                            )
+                        ),
+                          onPressed: () {},
+                          child: Center(
+                            child: Text('Log Out',
+                              textAlign: TextAlign.center,
+                              style: GoogleFonts.poppins(
+                                fontSize: 18,
+                                color: Color.fromARGB(255, 255, 255, 255),
+                                fontWeight: FontWeight.w500,
+                                letterSpacing: 0,
+                              ),
+                            ),
+                          )
+                      ),
+                    )
+                  ],
                 ),
               ),
-            ),
-          ),
-
-          Row(
-            children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Align(
-                      alignment: Alignment.centerLeft,
-                      child: Text('Personal Information',
-                          style: TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20
-                          )
-                      )),
-                ),
-
-                TextButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => EditProfilePage()));
-                  },
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 10, right: 10),
-                      child: Text('Edit Button',
-                        style: TextStyle(
-                          color: Colors.blue
-                        )
-                      ),
-                    ),
-                ),
             ],
           ),
-          Container(
-            margin: EdgeInsets.only(left: 10, right: 10),
-            // width: double.infinity,
-            height: 40,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              borderRadius: BorderRadius.only(
-                topRight: Radius.circular(10),
-                topLeft: Radius.circular(10)
-              ),
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.grey
-                )
-              )
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Icon(
-                    Icons.person,
-                    color: Colors.black54
-                  ),
-                ),
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text('Full Name',
-                    style: TextStyle(
-                      color: Colors.black54
-                    ),
-                  ),
-                ),
-                
-                Padding(
-                  padding: EdgeInsets.only(left: 30),
-                  child: Align(
-                      alignment: Alignment.centerRight,
-                      child: Text('Loyd Cardozo',
-                        style: TextStyle(
-                          color: Colors.black54
-                        )
-                      )),
-                )
-              ]
-            )
-          ),
-
-          Container(
-            margin: EdgeInsets.only(left: 10, right: 10),
-            height: 40,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.grey
-                )
-              )
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Icon(
-                    Icons.email,
-                    color: Colors.black54
-                  ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text('Email',
-                    style: TextStyle(
-                      color: Colors.black54
-                    )
-                  ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.only(left: 50),
-                  child: Text('loyd.cardozo@gmail.com',
-                    style: TextStyle(
-                      color: Colors.black54
-                    )
-                  ),
-                )
-              ],
-            )
-          ),
-
-          Container(
-            margin: EdgeInsets.only(left: 10, right: 10),
-            height: 40,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.black54
-                )
-              )
-            ),
-            child: Row(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Icon(
-                    Icons.lock,
-                    color: Colors.black54
-                  ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.only(left: 10),
-                  child: Text('password',
-                    style: TextStyle(
-                      color: Colors.black54
-                    )
-                  ),
-                ),
-
-                Padding(
-                  padding: EdgeInsets.only(left: 20),
-                  child: Text('deded',
-                    style: TextStyle(
-                      color: Colors.black54
-                    )
-                  ),
-                )
-              ],
-            )
-          ),
-
-          Container(
-            margin: EdgeInsets.only(left: 10, right: 10),
-            height:40,
-            decoration: BoxDecoration(
-              color: Colors.grey[300],
-              border: Border(
-                bottom: BorderSide(
-                  color: Colors.black54
-                )
-              )
-            )
-          ),
-
-          Container(
-            height: 40,
-            margin: EdgeInsets.only(left: 2),
-            decoration: BoxDecoration(
-              color: Colors.grey[300]
-            )
-          )
-
-        ]
-      )
-      )
+        )
+      ),
     );
   }
 }
+
